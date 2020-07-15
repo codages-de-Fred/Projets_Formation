@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo liste</title>
+</head>
+<body>
+    <h1>todo liste avec sections</h1>
+
+    <section>
+        <label for="tache">nom de la tâche : </label>
+        <input type="text" name="tache" id="tache">
+        <button id="bouton_tache">+</button>
+    </section>
+
+    <div id="affichage">
+
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let affichage = document.getElementById('affichage');
+        let tache = document.getElementById('tache');
+        let bouton_tache = document.getElementById('bouton_tache');
+
+        bouton_tache.addEventListener('click', () => {
+            let titre = document.createElement('ul');
+            titre.textContent = tache.value;
+
+            let label = document.createElement('label');
+            label.textContent = ", insérer la liste : "
+            let input = document.createElement('input');
+            let button = document.createElement('button');
+            button.textContent = "+";
+
+            affichage.appendChild(titre);
+            titre.appendChild(label);
+            titre.appendChild(input);
+            titre.appendChild(button);
+
+            tache.value = "";
+
+            button.addEventListener('click', (event) => {
+                let li = document.createElement('li');
+                li.textContent = input.value;
+                input.value = "";
+
+                event.target.parentNode.appendChild(li);
+            })
+        })
+
+
+    })
+    
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo liste</title>
+</head>
+<body>
+    <!-- Implémenter une simple Liste de Tâches (To Do List) en javascript et HTML.
+
+Une To Do List se compose d'un champ d'input pour indiquer l'intitulé de la tâche à effectuer, et une liste de tâches auxquelles se rajoutent la tâche indiquée dans le champ d'input.
+
+On peut ensuite rajouter un bouton sur chaque tâche pour supprimer la tâche, et possiblement un bouton pour afficher la tâche comme "complétée". -->
+    <h1>La TODO liste</h1>
+
+    <section>
+        <label for="tache">nom de la tâche : </label>
+        <input type="text" name="tache" id="tache">
+        <button id="bouton_tache">+</button>
+    </section>
+
+    <div >
+        <ul id="liste">
+
+        </ul>
+    </div>
+    
+    
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let tache = document.getElementById('tache');
+        let boutonTache = document.getElementById('bouton_tache');
+        let liste = document.getElementById('liste');
+        let supprimer = document.getElementsByClassName('supprimer');
+
+        boutonTache.addEventListener('click', () => {
+            let li = document.createElement('li');
+            let valeur = tache.value;
+            li.textContent = valeur;
+            liste.appendChild(li);
+            let barre = document.createElement('button');
+            barre.textContent = "effectué";
+            let supprime = document.createElement('button');
+            supprime.textContent = "supprimé";
+            li.appendChild(barre);
+            li.appendChild(supprime);
+
+            tache.value = "";
+
+            barre.addEventListener('click', (event) => {
+                event.target.parentNode.style.textDecorationLine = "line-through";
+            })
+            supprime.addEventListener('click', (event) => {
+                event.target.parentNode.remove();
+            })
+        })
+
+    })
+</script>
+</html>
