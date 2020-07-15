@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    background-color: rgb(49, 42, 42);
+}
+#deconnexion {
+    margin-left: 75%;
+    margin-bottom: 5%;
+}
+#deconnexion a {
+    color: white;
+    border: 3px solid rgb(105, 184, 105);
+}
+h1 {
+    color: white;
+    margin-bottom: 5%;
+}
+section {
+    text-align: center;
+    margin: auto;
+    background-color: rgb(168, 161, 161);
+    width: 50%;
+    padding: 1%;
+}
+form {
+    width: 40%;
+    background-color: white;
+    margin: 2% 20% 2% 30%;
+    padding: 2%;
+    border: 1px solid black;
+}
+.submit {
+    margin-top: 1%;
+}
+.messageErreur {
+    color: red;
+}

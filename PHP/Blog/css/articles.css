@@ -1,0 +1,42 @@
+@font-face {
+    font-family: SigmarOne-Regular;
+    src: url('../police/SigmarOne-Regular.ttf') format('truetype');
+}
+body {
+    text-align: center;
+    background-color: rgb(49, 42, 42);
+}
+#deconnexion {
+    margin-left: 75%;
+    margin-bottom: 5%;
+}
+#deconnexion a {
+    color: white;
+    border: 3px solid rgb(105, 184, 105);
+}
+a {
+    text-decoration: none;
+}
+.articles {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    border: 3px solid rgb(105, 184, 105);
+    border-radius: 5%;
+    color: black;
+}
+.articles:hover {
+    width: 55%;
+    transition-duration: 0.5s;
+}
+h2 {
+    font-family: SigmarOne-Regular;
+    font-size: 2em;
+}
+h3 {
+    color: white;
+}
+.avatar {
+    max-width: 50px;
+    max-height: 50px;
+}

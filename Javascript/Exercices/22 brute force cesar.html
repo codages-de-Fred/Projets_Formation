@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+
+    <body>
+        <!--Ecrire un programme permettant de bruteforce un chiffre César-->
+        <script>
+            // créer un prompt pour entrer une phrase codée en césar
+            let phrase = prompt("Entrez votre phrase codée");
+            console.log(phrase);
+            // créer une boucle qui permet de tester plusieurs fois
+            let alphabet = ("abcdefghijklmnopqrstuvwxyz");
+            /* pgme lit la phrase et ajoute +1 à l'ordre de chq lettre de la phrase 
+            pour chq lettre de la phrase changer la lettre 26 fois 
+            si pgme reconnait propose une traduction sinon continue */
+            for (let k =0; k <= 26; k++) {
+                    let reponse = "";
+                    for (let i = 0; i < phrase.length; i++) { // parcourt chq lettre de la phrase codée
+                        if (phrase[i] === " " || phrase[i] === "0" || phrase[i] === "1" || phrase[i] === "2" || phrase[i] === "3" || phrase[i] === "4" || phrase[i] === "5" || phrase[i] === "6" || phrase[i] === "7" || phrase[i] === "8" || phrase[i] === "9" || phrase[i] === "'"  || phrase[i] === "-") {
+                            reponse = reponse + phrase[i];
+                        } else {
+                            for (let j = 0; j < alphabet.length; j++) { // parcourt chq lettre de l'alphabet
+                                if (phrase[i] === alphabet[j]) { // cherche la lettre de phrase ds alphabet
+                                    if ((j+k >= alphabet.length)) {
+                                        reponse = reponse + alphabet[j+k-alphabet.length];
+                                    } else {
+                                        reponse = reponse + alphabet[j+k];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    for (let l = 1; l < reponse.length; l++) {
+                        if ((reponse[l-1] + reponse[l]) === "la" || (reponse[l-1] + reponse[l]) === "le" || (reponse[l-1] + reponse[l]) === "lu" || (reponse[l-1] + reponse[l]) === "de" || (reponse[l-1] + reponse[l]) === "l'" || (reponse[l-1] + reponse[l]) === "un" || (reponse[l-1] + reponse[l]) === "ne" || (reponse[l-1] + reponse[l]) === "na" || (reponse[l-1] + reponse[l]) === "te" || (reponse[l-1] + reponse[l]) === "ta" || (reponse[l-1] + reponse[l]) === "ce" || (reponse[l-1] + reponse[l]) === "si" || (reponse[l-1] + reponse[l]) === "sa" || (reponse[l-1] + reponse[l]) === "a ") {
+                            alert(reponse);
+                            let proposition = prompt("est-ce que cette proposition vous convient ? oui(o) non(n)");
+                            if (proposition === "o") {
+                                console.log(reponse);
+                                break;
+                            } else if (proposition === "n") {
+                                l++;
+                            } else {
+                                alert("mauvaise lettre");
+                                proposition;
+                            }
+                        }
+                    }
+                
+            }
+            
+        </script>
+    </body>
+</html>

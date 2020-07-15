@@ -1,0 +1,40 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire le nb de nb paires et le nb de nb impaires
+        dans un tableau
+    -->
+    <script>
+        // préparer les tableaux pour recevoir les nbs paires et impaires
+      let paires = [];
+      let impaires = [];
+
+        // création d'un tableau de données alétoires entre 1 et 100 où le nb d'éléments est 
+        // défini par l'utilisateur
+      let nombre = Number(prompt("Entrez un nombre de valeurs aléatoires que vous souhaitez pour créer un tableau"));
+       let nbDemandes = [];
+       for (let i = 0; i < nombre; i++) {
+           nbDemandes.push(Math.floor(Math.random() * 100 + 1));
+           
+       }
+       console.log(nbDemandes);
+
+       for (let i = 0; i < nbDemandes.length; i++) {
+           let calcul = nbDemandes[i]%2; // calcul du reste du nombre i (du tableau) /2 
+           if (calcul === 0) {
+               paires.push(nbDemandes[i]); // si reste = 0 => paire => envoyé dans tableau paires
+           } else {
+               impaires.push(nbDemandes[i]); // si reste diff de 0  => impaire => envoyé dans tableau impaires
+           }
+       }
+       console.log("les nombres paires sont :", paires);
+       console.log("les nombres impaires sont", impaires);
+       
+    </script>
+</body>
+
+</html>

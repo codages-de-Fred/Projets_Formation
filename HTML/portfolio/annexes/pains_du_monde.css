@@ -1,0 +1,497 @@
+body {
+    background-color: white;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+header a {
+    padding-left: 70%;
+    color: white;
+    text-decoration: none;
+}
+header {
+    padding-top: 3%;
+    background-color: black;
+    border-radius: 0% 0% 30% 0%;
+    padding-bottom: 5%;
+}
+.trait_haut {
+    background-color: white;
+}
+h2 {
+    text-align: center;
+}
+
+#pains_anglais {
+    background-color: black;
+    border-radius: 10% 0% 10% 0%;
+    height: 800px;
+}
+#bara {
+    height: 140px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 5%;
+    z-index: 1;
+}
+#bara:hover {
+    height: 140px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 5%;
+    z-index: 3;
+}
+#bloomer {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 15%;
+    z-index: 2;
+}
+#bloomer:hover {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 15%;
+    z-index: 4;
+}
+#cob {
+    height: 183px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 25%;
+    z-index: 3; 
+}
+#cob:hover {
+    height: 183px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 25%;
+    z-index: 5; 
+}
+#cornbread {
+    height: 183px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 35%;
+    z-index: 4;
+}
+#cornbread:hover {
+    height: 183px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 35%;
+    z-index: 6;
+}
+#cornish {
+    height: 193px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 45%;
+    z-index: 5;
+}
+#cornish:hover {
+    height: 193px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 45%;
+    z-index: 7;
+}
+#cottage {
+    height: 193px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 55%;
+    z-index: 6;
+}
+#cottage:hover {
+    height: 193px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:60%;
+    left: 55%;
+    z-index: 8;
+}
+#crumpet {
+    height: 183px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:70%;
+    left: 65%;
+    z-index: 7;
+}
+#crumpet:hover {
+    height: 183px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:70%;
+    left: 65%;
+    z-index: 9;
+}
+#farmhouse {
+    height: 183px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:80%;
+    left: 75%;
+    z-index: 8;
+}
+#farmhouse:hover {
+    height: 183px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:80%;
+    left: 75%;
+    z-index: 11;
+}
+#lincoln {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:95%;
+    left: 75%;
+    z-index: 9;
+}
+#lincoln:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:95%;
+    left: 75%;
+    z-index: 12;
+}
+#morning {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:110%;
+    left: 75%;
+    z-index: 10;
+}
+#morning:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:110%;
+    left: 75%;
+    z-index: 14;
+}
+#muffins {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:120%;
+    left: 65%;
+    z-index: 11;
+}
+#muffins:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:120%;
+    left: 65%;
+    z-index: 14;
+}
+#pikelet {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:125%;
+    left: 55%;
+    z-index: 12;
+}
+#pikelet:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:125%;
+    left: 55%;
+    z-index: 16;
+}
+#potato {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:129%;
+    left: 50%;
+    z-index: 13;
+}
+#potato:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:129%;
+    left: 50%;
+    z-index: 15;
+}
+#scotch {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:129%;
+    left: 35%;
+    z-index: 14; 
+}
+#scotch:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:129%;
+    left: 35%;
+    z-index: 17; 
+}
+#soft {
+    height: 150px;
+    width: 130px;
+     text-align: center;
+     background-color: white;
+    position: absolute;
+    top:129%;
+    left: 28%;
+    z-index: 15; 
+}
+#soft:hover {
+    height: 150px;
+    width: 130px;
+     text-align: center;
+     background-color: white;
+    position: absolute;
+    top:129%;
+    left: 28%;
+    z-index: 17; 
+}
+#split {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:134.5%;
+    left: 18%;
+    z-index: 16;  
+}
+#split:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:134.5%;
+    left: 18%;
+    z-index: 19;  
+}
+#staffordshire {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:134.5%;
+    left: 8%;
+    z-index: 17;
+}
+#staffordshire:hover {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:134.5%;
+    left: 8%;
+    z-index: 19;
+}
+#stottie {
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top:134.5%;
+    left: 5%;
+    z-index: 18;
+}
+#mediterraneen {
+    height: 1100px;
+    background-color: black;
+    border-radius: 10% 0% 10% 0%;
+}
+#medit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5%;
+}
+.duo {
+    display: flex;
+}
+.med {
+    margin-top: 5%;
+    background-color: white;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 150px;
+    max-height: 150px;
+}
+h3 {
+    text-align: middle;
+    text-align: center;
+}
+#ens,#foc, #gri, #oli, #tas, #pan, #pane, #pia, #pit, #sch,#vol {
+    border-radius: 30% 0% 0% 30% / 50% 0% 0% 50%;
+}
+#inde {
+    background-color: black;
+    border-radius: 10% 0% 10% 0%;
+    height: 600px;
+}
+.bhatura {
+    position: absolute;
+    top: 385%;
+    left: 10%;
+}
+#ba_texte {
+    opacity: 0;
+    min-width: 200px;
+    min-height: 150px;
+}
+#ba_texte:hover {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.7;
+    min-width: 200px;
+    min-height: 150px;
+}
+.chapati {
+    position: absolute;
+    top: 385%;
+    left: 43%;
+}
+#cha_texte {
+    opacity: 0;
+    min-width: 200px;
+    min-height: 150px;
+} 
+#cha_texte:hover {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.7;
+    min-width: 200px;
+    min-height: 150px;
+}
+.dosa {
+    position: absolute;
+    top: 385%;
+    left: 76%;
+}
+#dosa_texte {
+    opacity: 0;
+    min-width: 200px;
+    min-height: 150px;
+}
+#dosa_texte:hover {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.7;
+    min-width: 200px;
+    min-height: 150px;
+}
+.naan {
+    position: absolute;
+    top: 415%;
+    left: 10%; 
+}
+#naan_texte, #par_texte, #po_texte, #ro_texte {
+    opacity: 0;
+    min-width: 200px;
+    min-height: 150px;
+}
+#naan_texte:hover, #par_texte:hover, #po_texte:hover, #ro_texte:hover {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.7;
+    min-width: 200px;
+    min-height: 150px;
+}
+.paratha {
+    position: absolute;
+    top: 415%;
+    left: 43%;
+}
+.poori {
+    position: absolute;
+    top: 415%;
+    left: 76%;
+}
+.roti_tandoori {
+    position: absolute;
+    top: 445%;
+    left: 43%;
+}

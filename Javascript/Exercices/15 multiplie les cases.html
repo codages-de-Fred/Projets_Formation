@@ -1,0 +1,47 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- Ecrire un programme qui multiplie les valeurs de deux tableaux
+    une à une
+    cad:
+    pour
+    [x, y, z]
+    [a, b, c]
+    le resultat doit donner
+    [x*a, y*b, z*c]
+    -->
+    <script>
+        // creation des 2 tableaux qui vont recevoir les valeurs
+       let premier = [];
+       let deuxieme = [];
+
+       // résultats dans un tableau
+       let resultats = [];
+        
+       // demande à l'utilisateur le nb de cases voulues
+       let nombreCases = Number(prompt("Indique le nombre de cases que tu veux"));
+       for (let i = 0; i < nombreCases; i++) {
+           premier.push(Math.floor(Math.random() * 100)); // nbs aleatoires entre 0 et 100
+           deuxieme.push(Math.floor(Math.random() * 100));
+       }
+       // vérifie les tableaux
+       console.log(premier);
+       console.log(deuxieme);
+
+       // calcul les cases de chq tableau au même numero de position
+       for (let j = 0; j < premier.length; j++) {
+           let calcul = premier[j] * deuxieme[j];
+           console.log(calcul); // affiche à chq tour de boucle le résultat
+           resultats.push(calcul); // renvoie les resultats dans le tableau
+       }
+       console.log(resultats); // affiche le tableau des résultats
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf">
+    </head>
+    <body>
+        <!--Implémenter un générateur de nombres premiers selon 
+            l'algorithme du crible d'eratosthène-->
+        <script>
+            // créer un prompt pour un tableau de suite de nb entiers
+            // allant jusqu'à un nb donné entier
+            let suiteNb = [];
+            let fin = Number(prompt("jusqu'à quel nombre voulez-vous les nombres premiers ?"));
+            // créer le tableau de suite de nb
+            for (let i = 0; i <= fin; i++) {
+                suiteNb.push(i);   
+            }
+            console.log(suiteNb);
+            suiteNb.splice(0, 1);
+            // 1 n'est pas un nb premier
+            for (let i = 0; i < suiteNb.length; i++) {
+                if (suiteNb[i] !== 2 && suiteNb[i]%2 === 0) {
+                    suiteNb.splice(i, 1);
+                } 
+            }
+            console.log("en elevant les mutiples de 2 " + suiteNb);
+            for (let i = 0; i < suiteNb.length; i++) {
+                if (suiteNb[i] !== 3 && suiteNb[i]%3 === 0) {
+                    suiteNb.splice(i, 1);
+                }
+            }
+            console.log("en enlevant les multiples de 3 " + suiteNb);
+            for (let i = 0; i < suiteNb.length; i++) {
+                if (suiteNb[i] !== 5 && suiteNb[i]%5 === 0) {
+                    suiteNb.splice(i, 1);
+                }
+            }
+            console.log("en enlevant les multiples de 5 " + suiteNb);
+            for (let i = 0; i < suiteNb.length; i++) {
+                if (suiteNb[i] !== 7 && suiteNb[i]%7 === 0) {
+                    suiteNb.splice(i, 1);
+                }
+            }
+            console.log("et en enlevant les multiples de 7 " + suiteNb);
+            
+        </script>
+    </body>
+</html>

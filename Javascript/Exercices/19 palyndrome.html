@@ -1,0 +1,117 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire un pgme qui vérifie si la chaîne est un palyndrome
+    -->
+    <script>
+       // definir une variable qui reçoit la chaîne inversée
+       let inverse = "";
+
+       // demande de créer une chaîne
+       let proposition = prompt("écrits une phrase ou un mot");
+
+       // supprime les espaces
+       let espace = "";
+       for (let i = 0; i < proposition.length; i++) {
+            if (proposition[i] === " ") {
+
+            } else {
+                espace = espace + proposition[i];
+            }
+       }
+       console.log(espace);
+
+       // supprime les majuscules
+       let majuscule = espace.toLowerCase();
+       
+       // supprime les accents
+       let demande = "";
+        for (let i = 0; i < majuscule.length; i++) {
+            if ((majuscule[i] === "é") || (majuscule[i] === "è") || (majuscule[i] === "ê") || (majuscule[i] === "ë")) {
+                demande = demande + "e";
+            } else if (majuscule[i] === "à") {
+                demande = demande + "a";
+            } else if (majuscule[i] === "ö") {
+                demande = demande + "o";
+            } else if (majuscule[i] === "ù") {
+                demande = demande + "u";
+            } else {
+                demande = demande + majuscule[i];
+            }
+        }
+       // pgme qui inverse la chaîne
+       for (let i = demande.length -1; i >= 0; i--) {
+           inverse = inverse + demande[i];
+       }
+       // vérifie l'inversement
+       console.log(demande);
+       console.log(inverse);
+
+       // compteur d'échec
+       let non = true;
+
+       // condition de palyndrome
+       for (let i = 0; i < demande.length; i++) {
+           if (demande[i] !== inverse[i]) {
+           non = false;
+           break;
+           }
+       }
+
+       // vérification du palyndrome
+       if (non === false) {
+           console.log("ce n'est pas un palyndrome");
+       } else {
+           console.log("c'est un palyndrome !!!");
+       }
+
+       // 2eme méthode
+       let mot = prompt("entre un mot ou une phrase");
+       // supprime les espaces
+       let esp = "";
+       for (let i = 0; i < mot.length; i++) {
+           if (mot[i] !== " ") {
+                esp = esp + mot[i];
+           } 
+       }
+       console.log(esp);
+       // supprime les majuscules
+       let maj = esp.toLowerCase();
+       console.log(maj);
+       // supprime les accents
+       let chaine = "";
+       for (let i = 0; i < maj.length; i++) {
+            if ((maj[i] === "é") || (maj[i] === "è") || (maj[i] === "ê") || (maj[i] === "ë")) {
+                chaine = chaine + "e";
+            } else if (maj[i] === "à") {
+                chaine = chaine + "a";
+            } else if (maj[i] === "ö") {
+                chaine = chaine + "o";
+            } else if (maj[i] === "ù") {
+                chaine = chaine + "u";
+            } else {
+                chaine = chaine + maj[i];
+            }
+       }
+       console.log(chaine);
+       // test palyndrome
+       let echec = true;
+       for (let i = 0; i < chaine.length; i++) {
+           if (chaine[i] !== chaine[chaine.length - i - 1]) {
+                echec = false;
+                break;
+           }
+       }
+       if (echec === false) {
+           console.log("ce n'est pas un palydrome");
+       } else {
+           console.log("c'est un palydrome");
+       }
+    </script>
+</body>
+
+</html>

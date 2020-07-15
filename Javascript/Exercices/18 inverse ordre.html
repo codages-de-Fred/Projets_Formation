@@ -1,0 +1,29 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- Inverse l'ordre des lettres d'une phrase cad 
+        inverse le sens de lecture
+    -->
+    <script>
+        //  phrase inversée
+        let inverse = "";
+
+       // demande à l'utilisateur de créer une phrase
+       let phrase = prompt("écris une phrase et le programme inversera l'ordre des lettres");
+
+       // pgme d'inversement
+       for (let i = phrase.length -1; i >= 0; i--) {
+           // dans une chaîne on ne peur pas utiliser push()
+           // donc chq lettre est ajoutée à une chaîne vide
+            inverse = inverse + phrase[i];
+       }
+       console.log(inverse);
+
+    </script>
+</body>
+
+</html>

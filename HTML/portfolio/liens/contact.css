@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+header {
+    height: 200px;
+}
+#retour a {
+    padding-left: 60%;
+    font-size: 2em;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+#text {
+    padding-top: 10%;
+    font-size: 2em;
+}

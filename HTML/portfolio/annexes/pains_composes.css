@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+header a {
+    padding-left: 70%;
+    color: white;
+    text-decoration: none;
+}#croissants {
+    display: flex;
+    margin-top: 10%;
+}
+h2 {
+    text-align: center;
+}
+table {
+    margin-top: 5%;
+    margin-left: 10%;
+}
+td {
+    background-color: black;
+    max-width: 200px;
+    max-height: 150px;
+
+}
+#pavot {
+    background-image: url("../photos/composes/pavot.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#noix {
+    background-image: url("../photos/composes/noix.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

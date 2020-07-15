@@ -1,0 +1,141 @@
+@font-face {
+    font-family: Quicksand-VariableFont_wght;
+    src: url("polices/Quicksand-VariableFont_wght.ttf");
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(241, 236, 236);
+}
+article {
+    margin: auto;
+    align-items: center;
+}
+#top {
+    background-image: url("../images/pain.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-position: center;
+    width: 150%;
+    color: rgb(22, 20, 20);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    max-height: 100vh;
+}
+header {
+    margin: 20px 0;
+    color: rgb(241, 230, 230);
+    align-items: center;
+    margin-left: 5%;
+}
+#haut {
+    display: flex;
+    padding-top: 3%;
+    margin-left: 20%;
+    max-width: 60%;
+}
+#gauche {
+    flex-grow: 1;
+    text-align: center;
+    margin-left: 2%;
+
+}
+#droite {
+    flex-grow: 4;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+.liens a {
+    margin: 0px 10px;
+    text-decoration: none;
+    color: rgb(241, 230, 230);
+}
+#hour {
+    margin-left: 70%;
+    margin-top: 1%;
+    display: flex;
+}
+#horloge {
+    font-size: 2em;
+    color: orange;
+}
+#centre {
+    color: black;
+    margin-left: 10%;
+    width: 85%;
+    font-size: 1.5em;
+    align-items: center;
+}
+h1, .sous_titres {
+    background-color: rgba(218, 207, 207, 0.2);
+    text-align: center;
+}
+h1 {
+    font-size: 2em;
+    font-family: Quicksand-VariableFont_wght, sans-serif;
+    margin-top: 5%;
+    width: 30%;
+    margin-left: 32%;
+}
+.sous_titres {
+    width: 50%;
+    margin-left: 22%;
+}
+.encadre {
+    padding-bottom: 13%;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+#orange {
+    width: 50px;
+    background-color: rgb(134, 90, 8);
+    padding: 10px;
+}
+#photos_texte {
+    margin-left: 30%;
+    width: 100%;
+}
+#textes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#text_un {
+    flex-grow: 1;
+    max-width: 20%;
+    padding: 10px;
+}
+#intro_orange {
+    color: rgb(134, 90, 8);
+    font-size: 1.5em;
+    font-family: Quicksand-VariableFont_wght, sans-serif;
+    font-weight: bold;
+}
+#text_deux {
+    flex-grow: 2;
+    max-width: 50%;
+    padding: 10px;
+}
+#photos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+.cadres.cadre_texte {
+    display: flex;
+    flex-direction: column;
+}
+#image_sous_titre {
+    padding-top: 10px;
+    font-weight: bold;
+}
+.cadres {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(88, 83, 83), -1px -1px 2px rgb(165, 161, 161);
+}

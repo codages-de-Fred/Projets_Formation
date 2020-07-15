@@ -1,0 +1,43 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire un programme qui remplit de valeurs aléatoires entre 1 et 100 
+    un tableau dont la taille est définie par l'utilisateur.
+    Pour génerer un nombre entre 1 et 100 on utilise
+    Math.floor(Math.random() * 100 + 1)
+    ajouter les valeurs
+     -->
+    <script>
+       let nombre = Number(prompt("Entrez le nombre de valeurs aléatoires que vous souhaitez"));
+       /* ne pas appelé une variable "tableau" car c'est un nom reconnu 
+       par javascript */
+       let nbAleatoire = [];
+       for (let i = 0; i < nombre; i++) {
+           nbAleatoire.push(Math.floor(Math.random() * 100 + 1));
+
+      /* Math.floor = nb entier
+      Math.random = nombre aléatoire entre 0 et 1
+      => * 100 + 1 nombre aléatoire entre 1 et 100 */
+
+       }
+       console.log(nbAleatoire);
+
+       // affiche chq élément du tableau avec son numéro
+       for (let j = 0; j < nbAleatoire.length; i++) {
+           console.log(j, nbAleatoire[j]);
+       }
+       
+       let somme = 0;
+       for (let z = 0; z < nbAleatoire.length; z++) {
+           /* pour compter de 2 en 2 z+=2 */
+           somme = somme + nbAleatoire[z];
+       }
+       console.log("la somme des valeurs du tableau est: " + somme);
+    </script>
+</body>
+
+</html>

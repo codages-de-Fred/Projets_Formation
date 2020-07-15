@@ -1,0 +1,146 @@
+@font-face {
+    font-family: KaushanScript-Regular;
+    src: url('polices/KaushanScript-Regular.ttf') format('truetype');
+}
+body {
+    font-family: KaushanScript-Regular;
+    
+}
+main {
+    height: 100vh;
+}    
+header {
+    text-align: center;  
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#cv {
+    width: 25%;
+}
+#nom_titres {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 20% / 50%;
+    box-shadow: black 2px 2px 6px;
+}
+#nom_titres:hover {
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+}
+#lien_cv {
+    width: 25%;
+    color: black;
+}
+#lien_cv a {
+    color: black;
+    text-decoration: none;
+}
+#photo {
+    position: absolute;
+    top: 46%;
+    left: 43%;
+    width: 20px;
+    text-align: center;
+    z-index: 2;
+}
+.titres {
+    box-shadow: 10px 10px 4px grey;
+    background-color: rgb(245, 251, 161);
+    text-align: center;
+    max-width: 150px;
+    max-height: 48px;
+    overflow: hidden;
+    z-index: 1;
+}
+.haut_titre {
+    background-image:linear-gradient(white , rgb(201,174,2) , rgb(39,94,7));
+    min-height: 46px;
+    max-height: 150px;
+    border: 1px solid black;
+}
+.texte {
+    text-align: justify;
+    padding: 5%;
+}
+h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+#moi {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+#moi:hover, #exp_pro:hover, #exp_dev:hover, #competences:hover, #contact:hover, #langues:hover, #diplomes:hover {
+    box-shadow: none;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    min-width: 40%;
+    max-width: 40%;
+    max-height: 100%;
+    overflow: auto;
+    z-index: 3;
+}
+#competences {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+
+#exp_pro {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+
+#contact {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+#langues {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+.lang {
+    font-weight: bold;
+}
+#les_langues {
+    text-align: center;
+}
+#exp_dev {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+#diplomes {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+}
+#diplomes li {
+    list-style-type: none;
+}
+#git {
+    text-align: left;
+}
+.ecoles li {
+    margin-bottom: 2%;
+}
+.ecoles a {
+    color: blue;
+    font-weight: bold;
+}
+.soustitres_competences {
+    text-decoration: underline;
+}

@@ -1,0 +1,66 @@
+@font-face {
+    font-family: SigmarOne-Regular;
+    src: url('../police/SigmarOne-Regular.ttf') format('truetype');
+}
+body {
+    text-align: center;
+    background-color: rgb(206, 235, 206);
+}
+.inputs {
+    margin-bottom: 2%;
+    box-shadow: 5px 5px 5px black;
+}
+
+form {
+    width: 50%;
+    border-radius: 10%;
+    background: radial-gradient(rgb(166, 221, 166), rgb(18, 65, 18));
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    text-align: justify;
+    
+}
+h1 {
+    font-family: SigmarOne-Regular; 
+    font-size: 2.5em;
+    color: rgb(41, 12, 75);
+}
+nav {
+    padding-left: 70%;
+    margin-bottom: 5%;
+}
+nav a {
+    text-decoration: none;
+    border: 3px solid  rgb(138, 207, 138);
+    background: radial-gradient(rgb(166, 221, 166), rgb(18, 65, 18));
+    color: white;
+}
+.labels {
+    font-weight: bold;
+    text-shadow: 5px 5px 4px rgb(58, 56, 56);
+    font-size: 1.5em;
+}
+.erreurs {
+    font-weight: bold;
+    color: red;
+}
+#submit {
+    text-align: center;
+}
+#valider {
+    box-shadow: 5px 5px 5px black;
+    background-color: rgb(172, 165, 165);
+    font-weight: bold;
+    transition-duration: 1s;
+    transition-property: all;
+}
+#valider:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+#banane {
+    position: absolute;
+    left: 110vw;
+}

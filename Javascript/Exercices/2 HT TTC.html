@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- Ecrire un pgme qui lit le prix HT d'un article à l'unité, puis la quantité d'articles,
+    et qui retourne le prix total TTC correspondant. -->
+    <script>
+        let prixHT = Number(prompt("entrez le prix HT"));
+        // Number car on demande un chiffre pas un charactère
+        // prompt affiche la possibilté d'entrer un charactère à l'utilisateur
+        let nombreArticles = Number(prompt("entrez le nombre d'articles"));
+        let TVA = Number(prompt("entrez le taux de TVA"));
+        let prixTotalHT = prixHT * nombreArticles;
+        let totalTVA = prixTotalHT*TVA/100;
+        let prixTotalAvecTVA = prixTotalHT+totalTVA
+        console.log("le prix total TTC est de " + prixTotalAvecTVA + " euros");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+header a {
+    padding-left: 70%;
+    color: white;
+    text-decoration: none;
+}#croissants {
+    display: flex;
+    margin-top: 10%;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+#croissants_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 240px;
+}
+#croissants_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 240px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#croissants_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#pains_choc, #brioches, #pains_aux_raisins, #pains_suisses {
+    display: flex;
+    margin-top: 5%;
+}
+#pains_choc_image, #brioches_image, #pains_aux_raisins_image, #pains_suisses_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 240px;
+}
+#pains_choc_texte, #brioches_texte, #pains_aux_raisins_texte , #pains_suisses_texte{
+    background-color: white;
+    max-width: 75%;
+    max-height: 240px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#pains_choc_texte:hover, #brioches_texte:hover, #pains_aux_raisins_texte:hover, #pains_suisses_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+@keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -3000px, 0);
+      transform: translate3d(0, -3000px, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0);
+      transform: translate3d(0, 25px, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    animation-duration: 2s;
+  }

@@ -1,0 +1,57 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Implémenter un décodeur de chiffre César
+    -->
+    <script>
+       let phrase = prompt('Entrez une phrase codée');
+       
+       // créer un prompt pour entrer une phrase codée
+       // créer un prompt qui demande un nombre qui demande un chiffre pour déplacer les lettres
+       // le tout dans une boucle pour retenter le test avec une sortie demandée par l'utilisateur
+       
+       let reponse = ""; // phrase décodée
+       let alphabet = ("abcdefghijklmnopqrstuvwxyz");
+       let boucle = true; // tant que boucle est true la boucle continue
+       while (boucle) {
+            let continu = prompt("voulez-vous essayer de décoder ? (o) oui (n) non");
+            if (continu === "n") { // on sort de la boucle
+                boucle = false;
+            } else if (continu !== "o" && continu !== "n") { // si entre un caractère non demandé
+                alert("mauvais caractère entré");
+            } else if(continu === "o") { // si oui on continue les essais
+                
+                let cle = Number(prompt('de quel décalage voulez-vous changer les lettres ?')); // pour connaitre le nombre de déplacements des lettres
+                for (let i = 0; i < phrase.length; i++) {
+                    // si le caractère est un espace ou autre
+                    if (phrase[i] === " " || phrase[i] === "0" || phrase[i] === "1" || phrase[i] === "2" || phrase[i] === "3" || phrase[i] === "4" || phrase[i] === "5" || phrase[i] === "6" || phrase[i] === "7" || phrase[i] === "8" || phrase[i] === "9"){
+                        reponse = reponse + phrase[i];
+                    } else { // sinon on cherche dans l'alphabet
+                        for (let j = 0; j <= alphabet.length; j++) {
+                            if (alphabet[j] === phrase[i]) { // retrouve la lettre correspondante dans l'
+                                if ((j + cle) >= alphabet.length) { // si la demande de déplacement dépasse le nb de lettres de l'alphabet
+                                    
+                                    reponse = reponse + alphabet[j + cle - alphabet.length];
+                                } else {
+                                    
+                                    reponse = reponse + alphabet[j + cle];
+                                }
+                            } 
+                        }
+                    }
+                }
+                console.log(reponse);
+                reponse = "";
+                cle = "";
+
+            }
+       }
+
+    </script>
+</body>
+
+</html>

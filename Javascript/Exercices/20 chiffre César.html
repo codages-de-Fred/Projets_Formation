@@ -1,0 +1,57 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--implémenter un chiffre César
+    -->
+    <script>
+       // demander d'entrer une phrase
+       let phrase = prompt("entrez une phrase");
+       // phrase codée
+       let cesar = "";
+       // le décalage
+       let decalage = Math.floor(Math.random() * 10);
+       console.log(decalage);
+       // alphabet
+       let alphabet = "abcdefghijklmnopqrstuvwxyz";
+       // eliminer majuscules et accents
+       let maj = phrase.toLowerCase();
+       let chaine = "";
+       for (let i = 0; i < maj.length; i++) {
+            if ((maj[i] === "é") || (maj[i] === "è") || (maj[i] === "ê") || (maj[i] === "ë")) {
+                chaine = chaine + "e";
+            } else if (maj[i] === "à") {
+                chaine = chaine + "a";
+            } else if (maj[i] === "ö" || maj[i] === "ô") {
+                chaine = chaine + "o";
+            } else if (maj[i] === "ù") {
+                chaine = chaine + "u";
+            } else {
+                chaine = chaine + maj[i];
+            }
+       }
+       // appliquer le codage César
+       for (let i = 0; i < chaine.length; i++) { // on parcourt la chaine chaine
+       // si les caractères ne sont pas dans l'alphabet (chiffres et espace)
+           if (chaine[i] === " " || chaine[i] === "0" || chaine[i] === "1" || chaine[i] === "2" || chaine[i] === "3" || chaine[i] === "4" || chaine[i] === "5" || chaine[i] === "6" || chaine[i] === "7" || chaine[i] === "8" || chaine[i] === "9" || chaine[i] === "'" || chaine[i] === "-" ){ 
+               cesar = cesar + chaine[i];
+           } else {
+            for (let j = 0; j < alphabet.length; j++) { // on parcourt la chaine alphabet
+               if (chaine[i] === alphabet[j]) {
+                    if ((j + decalage) <= alphabet.length) { // si en ajoutant la place de la lettre on ne dépasse pas z
+                        cesar = cesar + alphabet[j + decalage];
+                    } else if ((j + decalage) > alphabet.length) { // si on dépasse z
+                        cesar = cesar + alphabet[j + decalage - alphabet.length];
+                    } 
+               } 
+           }
+           }           
+       }
+       console.log(cesar);
+    </script>
+</body>
+
+</html>

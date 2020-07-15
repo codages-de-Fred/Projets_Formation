@@ -1,0 +1,29 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire un programme renvoyé les n derniers éléments d'un tableau 
+    n étant précisé par l'utilisateur
+    -->
+    <script>
+       let nombre = Number(prompt("Entrez un nombre de valeurs aléatoires que vous souhaitez pour créer un tableau"));
+       let tableau = [];
+       for (let i = 0; i < nombre; i++) {
+           tableau.push(Math.floor(Math.random() * 100 + 1));
+           // pour chq tour insérer un nb aléatoire dans tableau
+           // le nb est défini par l'utilisateur (i < nombre)
+       }
+       console.log(tableau);
+
+       let nombreDerniersIndex = Number(prompt("Entrez le nombre des derniers éléments du tableau que vous souhaitez voir"));
+       for (let i = tableau.length -1; i > tableau.length - nombreDerniersIndex -1; i--) {
+           console.log(i, tableau[i]);
+       }
+       
+    </script>
+</body>
+
+</html>

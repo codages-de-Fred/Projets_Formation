@@ -1,0 +1,62 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire un tableau
+        une fonction qui dit si une valeur demandée existe ou non
+    -->
+    <script>
+        // renvoi un tableau aléatoire avec nb cases demandées par utilisateur
+        // et nb compris entre 0 et 100
+      
+
+      // une boucle while pour ne sortir du jeu seulement si le joueur le demande
+    let jeu = true; // pour accéder au jeu la condition doit être vraie en premier
+                    // pour sortir du jeu: uniquement avec "q" où jeu sera false
+    while (jeu) {
+        // demande de jouer
+        let choix = prompt("jouer (j) quitter (q)"); // si c'est "j" jeu reste true
+        if (choix === "j") {
+            let nombre = Number(prompt("Combien de valeurs voulez-vous dans le tableau ?"));
+            let reponse = [];
+            for (let i = 0; i < nombre; i++) {
+                reponse.push(Math.floor(Math.random() * 50 ));
+            }
+            let point = 0; // compteur de valeur trouvée
+            // demande la valeur à trouver dans le tableau
+            let essai = Number(prompt("tentez de trouver un nombre dans le tableau compris entre 0 et 50 "));
+
+            //recherche si la valeur existe dans le tableau
+            for (let j = 0; j < reponse.length; j++) {   
+                if (essai === reponse[j]) {
+                    point++;
+                } else {
+                    point = point + 0;     
+                }      
+            } 
+            if (point === 0) {
+                    console.log(false);
+
+                } else {
+                    console.log(true);
+                } 
+            
+        } else if (choix === "q") {
+            jeu = false; // jeu est false donc la boucle s'arrête
+        }else {
+            alert("mauvaise lettre");     
+            }        
+    } 
+      
+      
+     
+
+
+       
+    </script>
+</body>
+
+</html>

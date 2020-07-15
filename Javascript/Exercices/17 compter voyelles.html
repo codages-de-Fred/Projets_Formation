@@ -1,0 +1,30 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- compter le nb de voyelles dans une chaine
+    -->
+    <script>
+       // demande à l'utilisateur une phrase
+       let demande = prompt("écris une phrase pour comter le nombre de voyelles");
+
+       // compteur de voyelles
+       let compteur = 0;
+
+       // compter les voyelles
+       let phrase = demande.toLowerCase();
+       for (let i = 0; i < phrase.length; i++) {
+           
+           if ((phrase[i] === "a") || (phrase[i] === "à") || (phrase[i] === "â") || (phrase[i] === "e") || (phrase[i] === "é") || (phrase[i] === "è") || (phrase[i] === "ê") || (phrase[i] === "ë") || (phrase[i] === "i") || (phrase[i] === "o") || (phrase[i] === "ô") || (phrase[i] === "ù") || (phrase[i] === "u") || (phrase[i] === "y")) {
+               compteur++;
+           }
+       }
+       console.log(phrase);
+       console.log("il y a " + compteur + " voyelles dans la phrase.");
+    </script>
+</body>
+
+</html>

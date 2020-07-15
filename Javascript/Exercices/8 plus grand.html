@@ -1,0 +1,31 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire une fonction renvoyant le nombre le plus grand d'un tableau
+    -->
+    <script>
+       let nombre = Number(prompt("Entrez un nombre de valeurs aléatoires que vous souhaitez pour créer un tableau"));
+       let tableau = [];
+       for (let i = 0; i < nombre; i++) {
+           tableau.push(Math.floor(Math.random() * 100 + 1));
+           
+       }
+       console.log(tableau);
+       
+       function lePlusGrand (tableau) {
+            let grand = 0;
+            for (let i = 0; i < tableau.length; i++) {
+                if (tableau[i] > grand) {
+                    grand = tableau[i];
+                }
+            } return grand;
+       }
+       console.log(lePlusGrand(tableau));
+    </script>
+</body>
+
+</html>

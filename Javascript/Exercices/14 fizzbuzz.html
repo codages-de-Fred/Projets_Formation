@@ -1,0 +1,35 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Fizz Buzz
+    Ecrire un programme qui affiche les nombres de 1 à 100
+    et affiche fizz à la place du nombre s'il est divisible par 3
+    buzz à la place du nombre s'il est divisible par 5
+    et fizzbuzz à la place s'il est divisible par 3 et par 5
+    -->
+    <script>
+       let i = 1; // de 1 à 100
+       while (i <= 100) { // de 1 à 100
+           if (i%3 === 0) { // divisible par 3
+               console.log("fizz");
+               i++; // augmente de 1 sinon boucle sans fin
+           } else if (i%5 === 0) { // divisible par 5
+               console.log("buzz");
+               i++;
+           } else if ((i%3 === 0) && (i%5 === 0)) { // divisible par 3 et 5
+               console.log("fizzbuzz");
+               i++;
+           } else {
+               console.log(i);
+               i++;
+           }
+           
+       }
+    </script>
+</body>
+
+</html>

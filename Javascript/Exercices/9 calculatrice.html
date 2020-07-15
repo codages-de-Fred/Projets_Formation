@@ -1,0 +1,38 @@
+<!--réaliser une calculatrice pour laquelle vous devez demander 
+    d'entrer un nombre, une opération (+,-, *, /) 
+    et un deuxième nombre et afficher le résultat du calcul 
+    dans la console-->
+    <head>
+        <html>
+            <meta charset="utf8">
+        </html>
+    </head>
+    
+    <body>
+        <!--réaliser une calculatrice pour laquelle vous devez demander 
+    d'entrer un nombre, une opération (+,-, *, /) 
+    et un deuxième nombre et afficher le résultat du calcul 
+    dans la console-->
+        <script>
+           let nombreUn = Number(prompt("Entrez votre nombre"));
+           let operation = prompt("quelle opération ?");
+           let nombreDeux = Number(prompt("Entrez votre deuxième nombre"));
+           if (operation === "*") {
+               console.log(nombreUn*nombreDeux);
+           } else if (operation === "+") {
+               console.log(nombreUn + nombreDeux);
+           } else if (operation === "-") {
+               console.log(nombreUn - nombreDeux);
+           } else if (operation === "/") {
+               if (nombreDeux === 0) {
+                   console.log("impossible de diviser par 0");
+               } else  {
+                    console.log(nombreUn / nombreDeux);
+               }    
+           } else {
+               console.log("une opération est avec +, -, *, ou /");
+           }
+        </script>
+    </body>
+    
+    </html>

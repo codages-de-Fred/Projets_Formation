@@ -1,0 +1,189 @@
+#image {
+	
+	height: 550px;
+	background: url('images/fond_loup.jpg') no-repeat center;
+	background-color: black;
+}
+
+
+.trait {
+	border-left: 1px solid white;
+	background-color: black;
+	height: 40px;
+	margin-left: 950px;
+}
+#tableau {
+	display: flex;
+	direction: row;
+	justify-content: center;
+	align-content: center;
+	border: 1px solid white;
+	width: 1200px;
+	margin-left: 330px; 
+	margin-bottom: 30px;
+	height: 50px;
+	padding-top: 20px;
+	justify-content: space-around;
+
+}
+.el1 {
+	border: 1px solid white
+	margin: auto;
+}
+@font-face {
+	font-family: 'Niconne-Regular';
+	src: url('police/Niconne-Regular.ttf') format('truetype');
+}
+
+
+header h1 {
+	font-family: 'Niconne-Regular',Arial;
+	color: white;
+	font-size: 80px;
+	text-align: center;
+	border: 1px solid white;
+	padding: 20px;
+	width: 800px;
+	margin-left: 530px;
+	margin-bottom: 0px;
+	
+}
+
+body {
+	background-color: black;
+}
+
+a {
+	color: white;
+}
+#lien1 {
+	color: black;
+}
+#lien2 {
+	color: black;
+}
+#lien3 {
+	color: black;
+}
+#lien4 {
+	color: black;
+}
+h2 {
+	font-style: italic;
+	padding-left: 30px;
+	text-decoration: underline;
+}
+
+#antarc {
+	float: right;
+	width: 250px;
+	background-color: grey;
+	margin-top: 20px;
+	text-align: center;
+	padding-right: 10px;
+}
+
+#text_ant {
+	background-color: white;
+	width: 75%;
+	text-align: justify;
+	text-indent: 25px;
+	height: 250px;
+	padding: 20px 20px 20px 20px;
+	margin-left: 40px;
+	margin-top: 100px;
+}
+
+
+
+#mountain {
+	background-color: grey;
+	float: right;
+	width: 250px;
+	margin-top: 70px;
+	text-align: center;
+}
+
+#text_mountain {
+	background-color: white;
+	width: 75%;
+	text-align: justify;
+	text-indent: 25px;
+	padding: 20px 20px 20px 20px;
+	margin-left: 40px;
+	margin-top: 50px;
+}
+#pred {
+	background-color: grey;
+	float: right;
+	width: 250px;
+	margin-top: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+#text_pred {
+	background-color: white;
+	width: 75%;
+	text-align: justify;
+	text-indent: 25px;
+	padding: 20px 20px 20px 20px;
+	margin-left: 40px;
+	margin-top: 50px;
+}
+
+#family {
+	background-color: grey;
+	background-position: center;
+	width: 250px;
+	float: right;
+	margin-top: 80px;
+	padding-top: 10px;
+	text-align: center;
+}
+#text_family {
+	background-color: white;
+	padding: 20px 20px 20px 20px;
+	text-align: justify;
+	text-indent: 25px;
+	width: 75%;
+	margin-top: 50px;
+	margin-left: 40px;
+}
+#footer {
+	display: flex;
+	direction: row;
+	margin-top: 80px;
+	justify-content: center;
+	align-content: center;
+	width: 1200px;
+	justify-content: space-around;
+	margin-left: 300px;
+	margin-bottom: 30px;
+}
+#text_bas {
+	color: white;
+	padding-top: 80px;
+	text-align: justify;
+}
+#facebook {
+	position: absolute;
+	right: 630px;
+	top: 2590px;
+}
+#twitter {
+	position: absolute;
+	right: 540px;
+	top: 2650px;
+}
+#instagram {
+	position: absolute;
+	right: 550px;
+	top: 2725px;
+}
+#youtube {
+	position: absolute;
+	right: 630px;
+	top: 2790px;
+}

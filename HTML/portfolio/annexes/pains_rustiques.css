@@ -1,0 +1,211 @@
+body {
+    background-color: black;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+header a {
+    padding-left: 70%;
+    color: white;
+    text-decoration: none;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+#epeautre {
+    display: flex;
+    margin-top: 10%;
+}
+#epeautre_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 300px;
+}
+#epeautre_texte {
+    background-color: white;
+    max-height: 300px;
+    margin-left: 13%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#epeautre_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 13%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#complet, #campagne, #bis, #meteil, #seigle {
+    display: flex;
+    margin-top: 5%;
+}
+#complet_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 260px;
+}
+#complet_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 260px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#complet_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#campagne_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 310px;
+}
+#campagne_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 310px;
+    margin-left: 12%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#campagne_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 12%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#bis_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 250px;
+}
+#bis_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 250px;
+    margin-left: 7.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#bis_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 7.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#meteil_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 250px;
+}
+#meteil_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 250px;
+    margin-left: 14.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#meteil_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 14.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+#seigle_image {
+    margin-left: 10%;
+    border: 2px solid white;
+    background-color: white;
+    max-height: 260px;
+}
+#seigle_texte {
+    background-color: white;
+    max-width: 75%;
+    max-height: 260px;
+    margin-left: 9.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#seigle_texte:hover {
+    background-color: white;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: 9.5%;
+    margin-right: 10%;
+    border: 2px solid white;
+}
+@keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -3000px, 0);
+      transform: translate3d(0, -3000px, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0);
+      transform: translate3d(0, 25px, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    animation-duration: 2s;
+  }

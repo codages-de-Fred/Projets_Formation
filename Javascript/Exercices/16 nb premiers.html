@@ -1,0 +1,40 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- Ecrire un pgme récupérant tous les nbs premiers d'un tableau
+    -->
+    <script>
+       // tableau recupérant les valeurs
+       let resultat = [];
+
+       // tableau demandant les cases aleatoirement
+       let aleatoire = [];
+       let demande = Number(prompt("combien de nombres entiers entre 0 et 100"));
+       for (let i = 0; i < demande; i++) {
+            aleatoire.push(Math.floor(Math.random() * 100));
+       }
+
+       // vérification du tableau
+       console.log(aleatoire);
+
+       // identification nb premier pour chq case
+       for (let i = 0; i < demande; i++) {
+           // si la case est = à 1 ou 2 ou 3 ou 5 ou 7 nb premier
+           if ((aleatoire[i] === 1) || (aleatoire[i] === 2) || (aleatoire[i] === 3) || (aleatoire[i] === 5) ||(aleatoire[i] === 7)) {
+               resultat.push(aleatoire[i]);
+            // si la case n'est pas divisible par 2 ou 3 ou 5 ou 7 donc nb premier
+           } else if ((aleatoire[i]%2 !== 0) && (aleatoire[i]%3 !== 0) && (aleatoire[i]%5 !== 0) && (aleatoire[i]%7 !== 0)) {
+               resultat.push(aleatoire[i]);
+           } 
+       }
+
+       // affiche les nombres premiers
+       console.log(resultat);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!-- Ecrire un pgme demandant l'âge d'un enfant pour l'informer de la catégorie
+    sportive qui correspond 
+    - de 6 ans => mini poussin
+    6 à 7 ans => poussin
+    8 à 9 ans => benjamin
+    10 à 11 ans => minime
+    12 ans et + => cadet-->
+    <script>
+        let demandeAge = Number(prompt("quel âge a l'enfant ?"));
+        if ( demandeAge < 6) {
+            console.log("il est mini poussin");
+        } else if ((demandeAge === 6) || (demandeAge === 7)) { // || = ou
+            console.log("l'enfant est poussin");
+        } else if ((demandeAge === 8) || (demandeAge === 9)) {
+            console.log("l'enfant est benjamin");
+        } else if ((demandeAge === 10) || (demandeAge === 11)) {
+            console.log("l'enfant est minime");
+        } else {
+            console.log("l'enfant est un cadet");
+        }
+    </script>
+</body>
+
+</html>

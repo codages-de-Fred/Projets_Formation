@@ -1,0 +1,62 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Recupérer une tranche de tableau
+    -->
+    <script>
+      
+
+      let nombre = Number(prompt("Entrez un nombre de valeurs aléatoires que vous souhaitez pour créer un tableau"));
+       let nbDemandes = []; // attend les nb aleatoires
+       for (i = 0; i < nombre; i++) {
+           nbDemandes.push(Math.floor(Math.random() * 100 + 1));
+           
+       }
+       console.log(nbDemandes);
+
+       alert("Votre tableau contient : " + nbDemandes.length +  "éléments"); // affiche le nb d'éléments
+
+       let debut = Number(prompt("A partir de quel numéro d'élément voulez-vous commencer ?"));
+       let fin = Number(prompt("A quel numéro voulez-vous vous arrêter ?"));
+       /* 2 problèmes : si chiffre de début trop grand et si fin trop grand 
+                        si debut > fin */
+
+       
+       let demande = [];
+
+       if ((debut < nbDemandes.length) && (fin < nbDemandes.length)) {
+           if (debut < fin) {
+               for (i = debut - 1; i <  nbDemandes.length;i++) {
+                    demande.push(nbDemandes[i]);
+               }
+               let j = nbDemandes.length - fin - 1;
+               while ( j >= 0) {
+                   demande.pop();
+                   j--;   
+               }
+               console.log(demande);
+           } else {
+               for (k = debut; k >= 0 ; k--) {
+                    demande.push(nbDemandes[k]);
+               }
+               let l = fin - 1;
+               while (l >= 0) {
+                   demande.pop();
+                   l--;
+               }
+               console.log(demande);
+           }
+
+       } else {
+           console.error("les chiffres sont trop grands !!!");
+       }
+                        
+       
+    </script>
+</body>
+
+</html>

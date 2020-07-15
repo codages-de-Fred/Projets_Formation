@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    background: radial-gradient(rgb(212, 205, 189), rgb(49, 42, 42));
+}
+h1 {
+    font-size: 3em;
+    color: white;
+}
+section {
+    background-color: rgb(230, 218, 218);
+    max-width: 50%;
+    text-align: justify;
+    margin: auto;
+}
+form {
+    padding: 10%;
+}
+.input {
+    margin-bottom: 5%;
+}
+#submit {
+    text-align: center;
+    margin-top: 2%;
+}
+#valider {
+    box-shadow: 5px 5px 5px black;
+    background-color: rgb(116, 106, 106);
+    font-weight: bold;
+    transition-duration: 1s;
+    transition-property: all;
+}
+#valider:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+.erreurs {
+    color: red;
+}
+.message {
+    color: red;
+}

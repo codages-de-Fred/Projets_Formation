@@ -1,0 +1,25 @@
+<head>
+    <html>
+        <meta charset="utf8">
+    </html>
+</head>
+
+<body>
+    <!--Ecrire un programme demandant à l'utilisateur deux nombres 
+    Et apparaît tous les nombres entiers entre les deux nombres précisé-->
+    <script>
+       let nombreUn = Number(prompt("entrez un nombre"));
+       let nombreDeux = Number(prompt("entrez un deuxième nombre"));
+        if (nombreUn < nombreDeux) {
+            for (let i = nombreUn; i < nombreDeux; i++) {
+                console.log(i);
+            }
+        } else if (nombreUn > nombreDeux) { // inutile else suffisait
+            for (let j = nombreUn; j > nombreDeux; j--) {
+                console.log(j);
+            }
+        }
+    </script>
+</body>
+
+</html>
