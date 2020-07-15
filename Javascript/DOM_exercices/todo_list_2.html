@@ -26,34 +26,50 @@
         let bouton_tache = document.getElementById('bouton_tache');
 
         bouton_tache.addEventListener('click', () => {
-            let titre = document.createElement('ul');
-            titre.textContent = tache.value;
+            if (tache.value) {
+                let titre = document.createElement('ul');
+                let nom = document.createElement('h2');
+                nom.textContent = tache.value;
 
-            let label = document.createElement('label');
-            label.textContent = ", insérer la liste : "
-            let input = document.createElement('input');
-            let button = document.createElement('button');
-            button.textContent = "+";
+                let label = document.createElement('label');
+                label.textContent = ", insérer la liste : "
+                let input = document.createElement('input');
+                let button = document.createElement('button');
+                button.textContent = "+";
 
-            affichage.appendChild(titre);
-            titre.appendChild(label);
-            titre.appendChild(input);
-            titre.appendChild(button);
+                affichage.appendChild(titre);
+                titre.appendChild(nom);
+                titre.appendChild(label);
+                titre.appendChild(input);
+                titre.appendChild(button);
 
-            tache.value = "";
+                tache.value = "";
 
-            button.addEventListener('click', (event) => {
-                let li = document.createElement('li');
-                li.textContent = input.value;
-                input.value = "";
+                button.addEventListener('click', (event) => {
+                    if (input.value) {
+                        let li = document.createElement('li');
+                        li.textContent = input.value;
+                        input.value = "";
 
-                event.target.parentNode.appendChild(li);
-            })
-        })
+                        event.target.parentNode.appendChild(li);
 
+                        let sup = document.createElement('button');
+                        sup.textContent = "x";
+                        li.appendChild(sup);
 
+                        li.addEventListener('click', (event) => {
+                            event.target.style.textDecorationLine = "line-through";
+                        })
+
+                        sup.addEventListener('click', (event) => {
+                            event.target.parentNode.remove();
+                        })
+                     }    
+                })
+                   
+            }         
+        })  
     })
     
-
 </script>
 </html>
