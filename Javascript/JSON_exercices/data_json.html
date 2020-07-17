@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data json</title>
     <link rel="stylesheet" href="data.css">
-    <link rel="stylesheet" href="all.css">
     <script src="MOCK_DATA.json"></script>
 </head>
 <body>
@@ -42,6 +41,8 @@
                 let email = document.createElement('p');
                 //on fait un objet pour pouvoir changer la couleur du svg
                 let gender = document.createElement('object'); 
+
+                avatar.alt = "avatar de " + user.first_name;
 
                 //on leur associe des classes pour le css
                 div.className = 'card';
