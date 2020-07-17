@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>data json</title>
     <link rel="stylesheet" href="data.css">
+    <link rel="stylesheet" href="all.css">
     <script src="MOCK_DATA.json"></script>
 </head>
 <body>
-    <h1>Liste des utilisateurs</h1>
+    <h1>Liste des utilisateurs</h1>    
 
     <div id="search_board">
         <label for="texte">search by firstname begin to : </label>
@@ -33,26 +34,38 @@
             })
 
             function affiche(user) {
+                //création des éléments contenant chq paramètre
                 let div = document.createElement('div');
                 let avatar = document.createElement('img');
                 let firstname = document.createElement('h2');
                 let lastname = document.createElement('h2');
                 let email = document.createElement('p');
-                let gender = document.createElement('span');
+                //on fait un objet pour pouvoir changer la couleur du svg
+                let gender = document.createElement('object'); 
 
+                //on leur associe des classes pour le css
                 div.className = 'card';
                 avatar.className = 'avatar';
                 firstname.className = 'firstname';
                 lastname.className = 'lastname';
                 email.className = 'email';
                 gender.className = 'gender';
+                gender.type = "image/svg+xml"; //type pour les svg
 
+                //on ajoute ds chq élément leur contenu
                 avatar.src = user.avatar;
                 firstname.textContent = user.first_name;
                 lastname.textContent = user.last_name;
                 email.textContent = user.email;
-                gender.textContent = user.gender;
+                if (user.gender === "Female") {
+                    gender.data = "images/woman.svg";
+                    gender.classList.add("woman");
+                } else {
+                    gender.data = "images/men.svg";
+                    gender.classList.add('men');
+                }
 
+                //on affiche les différents paramètres de chq user
                 main.appendChild(div);
                 div.appendChild(avatar);
                 div.appendChild(firstname);

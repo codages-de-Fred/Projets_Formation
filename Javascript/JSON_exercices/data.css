@@ -17,18 +17,39 @@ input {
 }
 .card {
     height: 40vh;
-    width: 25vw;
+    width: 15vw;
     border-radius: 5% 5%;
-    background: linear-gradient(blue 20%, white 80%);
+    background: linear-gradient(blue 15%, white 15%);
     margin-bottom: 2%;
     box-shadow: 3px 3px 4px rgb(39, 38, 38);
     transition-duration: 0.5s;
+    overflow: auto;
 }
 .card:hover {
     box-shadow: none;
+    
 }
 .avatar {
     margin-top: 10px;
     border: 1px solid rgb(185, 179, 179);
     border-radius: 50% 50%;
+    background-color: white;
+}
+.email {
+    width: 75%;
+    overflow-wrap: break-word;
+    margin: auto;
+    font-size: 0.7em;
+}
+.gender {
+    width: 10%;
+    height: 10%;
+}
+.men {
+    /* pour changer la couleur de l'image svg */
+    /* changer la hue-rotate */
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(600deg) brightness(104%) contrast(97%);
+}
+.woman {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(300deg) brightness(104%) contrast(97%);
 }
