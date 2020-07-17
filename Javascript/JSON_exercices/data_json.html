@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data json</title>
+    <link rel="stylesheet" href="data.css">
+    <script src="MOCK_DATA.json"></script>
+</head>
+<body>
+    <h1>Liste des utilisateurs</h1>
+
+    <div id="search_board">
+        <label for="texte">search by firstname begin to : </label>
+        <input type="text" id="search" name="texte">
+    </div>
+    
+
+    <main id="content">
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let main = document.getElementById('content');
+            let search = document.getElementById('search');
+
+            let valueSearch = search.value;
+            let users = data.slice(0, 100);
+
+            users.forEach(user => { 
+                affiche(user);
+            })
+
+            function affiche(user) {
+                let div = document.createElement('div');
+                let avatar = document.createElement('img');
+                let firstname = document.createElement('h2');
+                let lastname = document.createElement('h2');
+                let email = document.createElement('p');
+                let gender = document.createElement('span');
+
+                div.className = 'card';
+                avatar.className = 'avatar';
+                firstname.className = 'firstname';
+                lastname.className = 'lastname';
+                email.className = 'email';
+                gender.className = 'gender';
+
+                avatar.src = user.avatar;
+                firstname.textContent = user.first_name;
+                lastname.textContent = user.last_name;
+                email.textContent = user.email;
+                gender.textContent = user.gender;
+
+                main.appendChild(div);
+                div.appendChild(avatar);
+                div.appendChild(firstname);
+                div.appendChild(lastname);
+                div.appendChild(email);
+                div.appendChild(gender);
+            }
+                
+            
+            search.addEventListener('keyup', (event) => {
+            //on utilise keyup car l'affichage du caractère est plus lent que l'exécution de la requête
+
+                /********* on supprime la liste ***************/
+                //childNodes est une collection
+                let children = Array.from(main.childNodes);
+                for (let i = 0; i < children.length; i++) {
+                    children[i].remove();
+                }
+
+                //on récupère la valeur de la recherche
+                let value = event.target.value;
+                console.log(value);
+                users.forEach(user => {
+                    if (user.first_name.toLowerCase().match("^(" + value + ")")) {
+                    affiche(user);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
