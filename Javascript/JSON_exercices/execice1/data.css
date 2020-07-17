@@ -1,6 +1,7 @@
 body {
     background-color: rgb(248, 246, 241);
     text-align: center;
+    color: rgb(51, 50, 50)
 }
 #search_board {
     border: 1px solid black;
@@ -31,7 +32,7 @@ input {
 }
 .avatar {
     margin-top: 10px;
-    border: 1px solid rgb(185, 179, 179);
+    box-shadow: 2px 2px 3px;
     border-radius: 50% 50%;
     background-color: white;
 }
@@ -40,6 +41,7 @@ input {
     overflow-wrap: break-word;
     margin: auto;
     font-size: 0.7em;
+    margin-bottom: 3px;
 }
 .gender {
     width: 10%;

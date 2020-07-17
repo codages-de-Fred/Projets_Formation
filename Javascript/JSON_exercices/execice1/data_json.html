@@ -12,7 +12,8 @@
 
     <div id="search_board">
         <label for="texte">search by firstname begin to : </label>
-        <input type="text" id="search" name="texte">
+        <!-- type search reconnu par html5 -->
+        <input type="search" id="search" name="texte">
     </div>
     
 
@@ -84,11 +85,10 @@
                 let children = Array.from(main.childNodes);
                 for (let i = 0; i < children.length; i++) {
                     children[i].remove();
-                }
+                }// ou plus simple: main.innerHTML = "";
 
                 //on récupère la valeur de la recherche
-                let value = event.target.value;
-                console.log(value);
+                let value = event.target.value.toLowerCase();
                 users.forEach(user => {
                     if (user.first_name.toLowerCase().match("^(" + value + ")")) {
                     affiche(user);
