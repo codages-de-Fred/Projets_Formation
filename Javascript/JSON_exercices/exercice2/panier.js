@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     /****************** panier *********************** */
     let basket = document.getElementById('basket');
+    let container = document.getElementById('container');
+    let fragment = document.createDocumentFragment();
 
+    fragment.appendChild(basket);
     let panier = [];
     
 
@@ -9,10 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     affiche(products);
     
     function affiche(products) {
-        let container = document.getElementById('container');
         
-        let fragment = document.createDocumentFragment();
-        fragment.appendChild(basket);
 
         products.forEach(product => {
             
@@ -35,15 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
             div.appendChild(image);
             fragment.appendChild(div);
         });
-        container.appendChild(fragment);
+        return container.appendChild(fragment);
     }
-
-/************* affichage de chaque produit ****************************** */
-
+    
+    /************* affichage de chaque produit ****************************** */
+    
     //pour les classes les ranger ds un tableau
     let eachProduct = Array.from(document.getElementsByClassName("eachProduct"));
     //on parcours le tableau pour chq élément
     eachProduct.forEach(choix => choix.addEventListener('click', (event) => {
+        console.log(event);
         let container = document.getElementById('container');
         container.innerHTML = "";
 
@@ -84,10 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let pushRetour = document.getElementById('retour');
         pushRetour.addEventListener('click', () => {
             container.innerHTML = "";
+            fragment.innerHTML = "";
             affiche(products);
         })
 
-    }, true)
+    })
     )
 
     /***** affichage du panier ************** */
