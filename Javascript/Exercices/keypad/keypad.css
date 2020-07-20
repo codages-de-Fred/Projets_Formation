@@ -1,0 +1,12 @@
+#keypad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30vw;
+    border: 1px solid black;
+}
+.allKeys {
+    border: 1px solid black;
+    margin: 2px;
+    width: 15%;
+    height: 2vw;
+}
