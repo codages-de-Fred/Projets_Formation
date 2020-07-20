@@ -14,8 +14,6 @@ function affiche(products) {
     //pour afficher en une seule fois
     let fragment = document.createDocumentFragment();
 
-    
-
     afficheNombreCommandes();
     
     products.forEach(product => {
