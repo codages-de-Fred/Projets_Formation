@@ -6,17 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let panier = []; //tableau des produits ajoutés
 let total = 0; //prix total des commandes
+let nombreCommandes = 0;
 
 function affiche(products) {
     let basket = document.getElementById('basket');
     let container = document.getElementById('container');
+    //pour afficher en une seule fois
     let fragment = document.createDocumentFragment();
+
+    function afficheNombreCommandes() {
+        let panneauNombreCommandes = document.getElementById('nombreCommandes');
+        panneauNombreCommandes.textContent = nombreCommandes;
+    }
+
+    afficheNombreCommandes();
     
     products.forEach(product => {
         
         let div = document.createElement('div');
-        let name = document.createElement('span');
-        let price = document.createElement('span');
+        let name = document.createElement('div');
+        let price = document.createElement('div');
+        let divImage = document.createElement('div');
         let image = document.createElement('img');
         
         div.className = "eachProduct";
@@ -31,12 +41,13 @@ function affiche(products) {
         
         div.appendChild(name);
         div.appendChild(price);
-        div.appendChild(image);
+        div.appendChild(divImage);
+        divImage.appendChild(image);
         fragment.appendChild(div);
     });
     container.appendChild(fragment);
 
-/************* affichage de chaque produit ****************************** */
+ /************* affichage de chaque produit ****************************** */
 
     //pour les classes les ranger ds un tableau
     let eachProduct = Array.from(document.getElementsByClassName("eachProduct"));
@@ -60,8 +71,8 @@ function affiche(products) {
 
         name.textContent = choix.childNodes[0].textContent;
         price.textContent = choix.childNodes[1].textContent;
-        image.src = choix.childNodes[2].src;
-        image.alt = choix.childNodes[2].alt;
+        image.src = choix.childNodes[2].firstChild.src;
+        image.alt = choix.childNodes[2].firstChild.alt;
         button.textContent = "ajouter au panier";
         retour.textContent = "retour à la liste";
         
@@ -96,8 +107,9 @@ function affiche(products) {
             } else {
                 traduitObjet(basketName, basketPrice, basketImgSrc, basketImgAlt, nombreAjout);
                 total += nombreAjout*priceWithoutEuros;
+                nombreCommandes = parseInt(nombreCommandes) + parseInt(nombreAjout);
+                afficheNombreCommandes();
             }
-            
         })
         /**** retour à la liste des produits ******* */
         let pushRetour = document.getElementById('retour');
@@ -110,55 +122,77 @@ function affiche(products) {
 
     /***** affichage du panier ************** */
     basket.addEventListener('click', () => {
-        container.innerHTML = "";
-
-        let tableau = document.createElement('table');
-        let thead = document.createElement('thead');
-        let trhead = document.createElement('tr');
-        let thHeadUn = document.createElement('th');
-        let thHeadDeux = document.createElement('th');
-        let thHeadTrois = document.createElement('th');
-        let thHeadQuatre = document.createElement('th');
-        let tbody = document.createElement('tbody');
-
-        thHeadQuatre.textContent = "quantity";
-        thHeadUn.textContent = "name";
-        thHeadDeux.textContent = "price";
-        thHeadTrois.textContent = "image";
-
-        container.appendChild(tableau);
-        tableau.appendChild(thead);
-        thead.appendChild(trhead);
-        trhead.appendChild(thHeadUn);
-        trhead.appendChild(thHeadDeux);
-        trhead.appendChild(thHeadTrois);
-        trhead.appendChild(thHeadQuatre);
-        tableau.appendChild(tbody);
+        affichePanier();
         
-        
-        panier.forEach(produit => {
-            if (panier !== []) {
-                let trBody = document.createElement('tr');
-                let quantity = document.createElement('td');
-                let name = document.createElement('td');
-                let price = document.createElement('td');
-                let tdImage = document.createElement('td');
-                let image = document.createElement('img');
-                
-                quantity.textContent = produit.quantity;
-                name.textContent = produit.name;
-                price.textContent = produit.price;
-                image.src = produit.imgSrc;
-                image.alt = produit.imgAlt;
-                
-                tbody.appendChild(trBody);
-                trBody.appendChild(quantity);
-                trBody.appendChild(name);
-                trBody.appendChild(price);
-                tdImage.appendChild(image);
-                trBody.appendChild(image);
-            }
-        })
+        function affichePanier() {
+            container.innerHTML = "";
+            let tableau = document.createElement('table');
+            let thead = document.createElement('thead');
+            let trhead = document.createElement('tr');
+            let thHeadUn = document.createElement('th');
+            let thHeadDeux = document.createElement('th');
+            let thHeadTrois = document.createElement('th');
+            let thHeadQuatre = document.createElement('th');
+            let tbody = document.createElement('tbody');
+            let liste = document.createElement('button');
+
+            thHeadQuatre.textContent = "quantity";
+            thHeadUn.textContent = "name";
+            thHeadDeux.textContent = "price";
+            thHeadTrois.textContent = "image";
+            liste.textContent = "retour à la liste";
+
+            container.appendChild(liste);
+            container.appendChild(tableau);
+            tableau.appendChild(thead);
+            thead.appendChild(trhead);
+            trhead.appendChild(thHeadQuatre);
+            trhead.appendChild(thHeadUn);
+            trhead.appendChild(thHeadDeux);
+            trhead.appendChild(thHeadTrois);
+            tableau.appendChild(tbody);
+            
+            
+            panier.forEach(produit => {
+                if (panier !== []) {
+                    let trBody = document.createElement('tr');
+                    let quantity = document.createElement('td');
+                    let name = document.createElement('td');
+                    let price = document.createElement('td');
+                    let tdImage = document.createElement('td');
+                    let image = document.createElement('img');
+                    let annuler = document.createElement('button');
+                    
+                    quantity.textContent = produit.quantity;
+                    name.textContent = produit.name;
+                    price.textContent = produit.price;
+                    image.src = produit.imgSrc;
+                    image.alt = produit.imgAlt;
+                    annuler.textContent = "supprimer";
+                    annuler.id = "supprimer";
+                    
+                    tbody.appendChild(trBody);
+                    trBody.appendChild(quantity);
+                    trBody.appendChild(name);
+                    trBody.appendChild(price);
+                    tdImage.appendChild(image);
+                    trBody.appendChild(image);
+                    trBody.appendChild(annuler);
+                    
+                    //supprimer un élément du panier
+                    annuler.addEventListener('click', () => {
+                        for (let i=0; i < panier.length; i++) {
+                            if (panier[i] === produit) {
+                                nombreCommandes = parseInt(nombreCommandes) - parseInt(produit.quantity);
+                                total -= (parseFloat(produit.price)*parseFloat(produit.quantity)).toFixed(2);
+                                panier.splice(i, 1);
+                                afficheNombreCommandes();
+                                affichePanier();
+                            }
+                        }
+                    })
+                }
+            })
             //affichage du total dans le tableau
             let trTotal = document.createElement('tr');
             let tdTotalUn = document.createElement('td');
@@ -166,22 +200,29 @@ function affiche(products) {
             
             tdTotalUn.colSpan = "3";
             tdTotalUn.textContent = "total";
-            tdTotalDeux.textContent = total;
+            tdTotalDeux.textContent = parseFloat(total).toFixed(2) + "€";
             
             tbody.appendChild(trTotal);
             trTotal.appendChild(tdTotalUn);
             trTotal.appendChild(tdTotalDeux);
-
+            
+            //retour à la liste
+            liste.addEventListener('click', () => {
+                container.innerHTML = "";
+                fragment.innerHTML = "";
+                affiche(products);
+            })
+        }
     })
 }
-//traduit les paramètres de l'élément envoyer au panier en objet
-function traduitObjet(a, b, c, d, e) {
-    selectProduct = {
-        name: a,
-        price: b,
-        imgSrc: c,
-        imgAlt: d,
-        quantity: e
+ //traduit les paramètres de l'élément envoyer au panier en objet
+    function traduitObjet(a, b, c, d, e) {
+        selectProduct = {
+            name: a,
+            price: b,
+            imgSrc: c,
+            imgAlt: d,
+            quantity: e
+        }
+        panier.push(selectProduct);
     }
-    panier.push(selectProduct);
-}
