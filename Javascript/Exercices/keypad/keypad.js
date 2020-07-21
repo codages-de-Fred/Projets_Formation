@@ -21,22 +21,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allKeys = Array.from(document.getElementsByClassName('allKeys'));
     allKeys.forEach(oneKey => oneKey.addEventListener('click', () => {
+        console.log(affichage);
         affichage += oneKey.textContent;
         code.textContent = affichage;
-        verifCode(affichage);
-        console.log(affichage.length)
+        if (verifCode(affichage)) {
+            affichage = "";
+        }
     }))
 })
 function verifCode(affichage) {
+    let vide = 0;
     if (affichage.length > 5) {
-        for(let i=0; i < code.length; i++) {
-            if (code[i] === " ") {
-                alert("Erreur : vous avez mis des espaces");
-            } else {
-                alert("ok");
+        for(let i=0; i < affichage.length; i++) {
+            console.log(affichage[i])
+            if (affichage[i] === " ") {
+                vide++;
             }
-            affichage = "";
-            code.textContent = "";
         }
+        console.log(affichage.length)
+        if (vide > 0) {
+            alert("Erreur : vous avez entrer des espaces");
+            return true;
+        } else {
+            alert('ok');
+            return true;
+        }
+    } else {
+        return false;
     }
 }
