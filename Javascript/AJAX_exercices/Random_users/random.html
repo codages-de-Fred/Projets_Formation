@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="random.css">
+    <script src="random.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- À l'aide de l'API (Application Programming Interface) randomuser.me et de
+         XMLHttpRequest, mettre en place une interface qui contiendra des informations
+          d'utilisateurs générés aléatoirement.
+Cette interface permettra également de selectionner la nationalité dans un menu déroulant 
+ainsi que le genre d'utilisateur à l'aide d'une checkbox, avec rafraichissement des données 
+instantané.
+Les informations à afficher pour chaque utilisateur sont :
+
+La photo
+Le nom
+L'adresse
+Le numéro de téléphone
+La date de naissance -->
+
+<main>
+    <section>
+        <label for="nationality">Entrez sa nationalité : </label>
+        <select name="nationality" id="nationality">
+            <option value="FR">Française</option>
+            <option value="GB">Anglaise</option>
+            <option value="US">Américaine</option>
+            <option value="CH">Suisse</option>
+            <option value="ES">Espagnole</option>
+        </select>
+        <label for="gender">Entrez son genre : </label>
+        <input type="checkbox" name="gender" value="male" id="homme">homme
+        <input type="checkbox" name="gender" value="female" id="femme">femme
+
+        <button id="search">chercher</button>
+
+    </section>
+    <section id="liste">
+
+    </section>
+</main>
+</body>
+</html>

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(affichage);
         affichage += oneKey.textContent;
         code.textContent = affichage;
-        setTimeout(verif, 500);
+        setTimeout(verif, 300);
         function verif() {
            if (verifCode(affichage)) {
                 affichage = "";
