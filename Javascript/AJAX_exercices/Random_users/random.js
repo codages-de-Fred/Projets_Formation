@@ -62,18 +62,15 @@ function afficheResults(reponse) {
         let photo = document.createElement('img');
         let divPhoto = document.createElement('div');
         let imgName = document.createElement('img');
-        let name = document.createElement('div');
-        let adress = document.createElement('div');
         let imgAdress = document.createElement('img');
-        let tel = document.createElement('img');
         let imgTel = document.createElement('img');
-        let dob = document.createElement('div');
         let imgDob = document.createElement('img');
         let divIcones = document.createElement('div');
         let divAfficheTop = document.createElement('div');
         let divAfficheBottom = document.createElement('div');
         let person = document.createElement('div');
 
+        photo.className = "photo";
         imgTel.src = "images/tel.svg";
         imgName.src = "images/name.svg";
         imgAdress.src = "images/adress.svg";
