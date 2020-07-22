@@ -4,20 +4,35 @@ body {
 #liste {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .person {
     display: flex;
     flex-direction: column;
-
+    margin: 10px;
+    width: 40%;
+    background: linear-gradient(rgb(212, 206, 206) 25%, rgb(250, 243, 243) 25%);
+    box-shadow: 2px 2px 4px;
+    transition-duration: 1s;
 }
-.affiche {
+.person:hover {
+    box-shadow: none;
+}
+.afficheTop {
     min-width: 80%;
-    min-height: 50px;
+    min-height: 30px;
+}
+.afficheBottom {
+    min-width: 80%;
+    min-height: 30px;
 }
 img {
+    margin-top: 10px;
     border-radius: 50%;
+    border: 5px solid rgb(250, 243, 243);
 }
 .icones {
     width: 30px;
     height: 30px;
+    margin-left: 5%;
 }

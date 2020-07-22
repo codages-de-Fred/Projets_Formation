@@ -70,7 +70,8 @@ function afficheResults(reponse) {
         let dob = document.createElement('div');
         let imgDob = document.createElement('img');
         let divIcones = document.createElement('div');
-        let divAffiche = document.createElement('div');
+        let divAfficheTop = document.createElement('div');
+        let divAfficheBottom = document.createElement('div');
         let person = document.createElement('div');
 
         imgTel.src = "images/tel.svg";
@@ -81,19 +82,17 @@ function afficheResults(reponse) {
         imgTel.className = "icones tel";
         imgDob.className = "icones dob";
         imgName.className = "icones name";
-        divAffiche.className = "affiche";
+        divAfficheTop.className = "afficheTop";
+        divAfficheBottom.className = "afficheBottom";
         person.className = "person";
 
 
         photo.src = user.picture.medium;
-        name.textContent = user.name.first;
-        adress.textContent = user.location.city;
-        tel.textContent = user.phone;
-        dob.textContent = user.dob.date;
-
+        
         divPhoto.appendChild(photo);
         person.appendChild(divPhoto)
-        person.appendChild(divAffiche);
+        person.appendChild(divAfficheTop);
+        person.appendChild(divAfficheBottom);
         divIcones.appendChild(imgName);
         divIcones.appendChild(imgAdress);
         divIcones.appendChild(imgTel);
@@ -101,23 +100,27 @@ function afficheResults(reponse) {
         person.appendChild(divIcones);
         liste.appendChild(person);
 
-        hover(user, divAffiche);
+        hover(user,divAfficheTop, divAfficheBottom);
     });
 }
-function hover(user, divAffiche) {
+function hover(user,divAfficheTop, divAfficheBottom) {
     let icones = Array.from(document.getElementsByClassName('icones'));
     icones.forEach(icone => icone.addEventListener('mouseover', (event) => {
         if (icone.className === "icones tel") {
-            divAffiche.textContent = "mon tel : " + user.phone;
+            divAfficheTop.textContent = "Mon numéro de téléphone :";
+            divAfficheBottom.textContent = user.phone;
         }
         if (icone.className === "icones adress") {
-            divAffiche.textContent = "je vis à : " + user.location.city;
+            divAfficheTop.textContent = "Je vis à :";
+            divAfficheBottom.textContent = user.location.city;
         }
         if (icone.className === "icones name") {
-            divAffiche.textContent = "je me nomme : " + user.name.first;
+            divAfficheTop.textContent = "Je me nomme :";
+            divAfficheBottom.textContent = user.name.first;
         }
         if (icone.className === "icones dob") {
-            divAffiche.textContent = "je suis né(e) le : " + user.dob.date;
+            divAfficheTop.textContent = "Je suis né(e) le :";
+            divAfficheBottom.textContent = user.dob.date;
         }
     }))
 }
