@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'wallpoet';
+    src: url('police/Wallpoet-Regular.ttf');
+}
+main {
+    margin-top: 5%;
+    background-color: rgb(39, 36, 36);
+    width: 350px;
+    padding-bottom: 20px;
+    border-radius: 5%;
+}
+#screen {
+    font-family: 'Wallpoet', cursive;
+    font-size: 2em;
+    width: 292px;
+    height: 50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+section {
+    display: flex;
+}
+#chiffres {
+    align-items: center;
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.buttonChiffres {
+    background-color: rgb(39, 36, 36);
+    color: rgb(252, 240, 240);
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+}
+#operations {
+    
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.buttonOperations {
+    background-color: rgb(39, 36, 36);
+    color: rgb(252, 240, 240);
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+}

@@ -29,14 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     search.addEventListener('click', () => {
-        gender = searchGender(genderMale, genderFemale);
-        request.open('GET', 'https://randomuser.me/api/?results=20&nationality=' + nationality + '&gender='+ gender);
-        request.send();
-        request.addEventListener('load', (event) => {
-        let reponse = JSON.parse(event.target.response);
-        console.log(reponse)
-        afficheResults(reponse);
-        })
+        if (searchGender(genderMale, genderFemale) !== "erreur") {
+            gender = searchGender(genderMale, genderFemale);
+            request.open('GET', 'https://randomuser.me/api/?results=20&nationality=' + nationality + '&gender='+ gender);
+            request.send();
+            request.addEventListener('load', (event) => {
+                let reponse = JSON.parse(event.target.response);
+                console.log(reponse)
+                afficheResults(reponse);
+            })
+        } else {
+            alert("Veuillez sélectionner le genre");
+        }
     })
 
 })
@@ -50,6 +54,9 @@ function searchGender(a, b) {
     }
     if (a && b) {
         return "";
+    }
+    if (!a && !b) {
+        return "erreur";
     }
 }
 
@@ -83,7 +90,6 @@ function afficheResults(reponse) {
         divAfficheBottom.className = "afficheBottom";
         person.className = "person";
 
-
         photo.src = user.picture.medium;
         
         divPhoto.appendChild(photo);
@@ -97,12 +103,15 @@ function afficheResults(reponse) {
         person.appendChild(divIcones);
         liste.appendChild(person);
 
-        hover(user,divAfficheTop, divAfficheBottom);
+        hover(user,person, divAfficheTop, divAfficheBottom);
     });
 }
-function hover(user,divAfficheTop, divAfficheBottom) {
-    let icones = Array.from(document.getElementsByClassName('icones'));
+function hover(user,person, divAfficheTop, divAfficheBottom) {
+    //il faut cibler chaque person sinon si on cible le document toutes les 
+    //persons changeront aussi
+    let icones = Array.from(person.getElementsByClassName('icones'));
     icones.forEach(icone => icone.addEventListener('mouseover', (event) => {
+        console.log(icone)
         if (icone.className === "icones tel") {
             divAfficheTop.textContent = "Mon numéro de téléphone :";
             divAfficheBottom.textContent = user.phone;
