@@ -1,0 +1,64 @@
+body {
+    text-align: center;
+}
+#titre {
+    margin: auto;
+    width: 60%;
+    height: 30VH;
+    background-image: url('images/sky.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5%;
+}
+h1 {
+    font-size: 4em;
+    padding-top: 5%;
+}
+#recherches {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3%;
+    align-items: center;
+}
+#selects {
+    display: flex;
+    flex-direction: column;
+} 
+#selects, #searchByCity {
+    background-color: rgb(65, 57, 57);
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 35%;
+    height: 25vh;
+}
+label {
+    font-weight: bold;
+}
+#city {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+ul {
+    text-align: justify;
+}
+li {
+    padding-left: 5%;
+    margin-bottom: 2%;
+    list-style-type: none;
+}
+#affichage {
+    background-color: rgb(247, 235, 235);
+    width: 60%;
+    margin: auto;
+}
+#semaine {
+    color: white;
+}
+canvas {
+    
+    margin: auto;
+    max-width: 80%;
+    max-width: 100vh;
+}

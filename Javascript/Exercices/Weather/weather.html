@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+    <script src="weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <title>Weather</title>
+</head>
+<body>
+    <div id="titre">
+        <h1>Météo par villes</h1>
+    </div>
+    
+    <article id="recherches">
+        <section id="selects">
+            <ul>
+                <li>
+                    <label for="selectRegions">Choisissez votre région : </label>
+                    <select name="selectRegions" id="selectRegions"></select>
+                </li>
+                <li>
+                    <label for="selectDep">Veuillez choisir le département : </label>
+                    <select name="selectDep" id="selectDep"></select>
+                </li>
+                <li>
+                    <label for="selectVilles">Veuillez choisir la ville : </label>
+                    <select name="selectVilles" id="selectVilles"></select>
+                </li>
+            </ul>
+            <div>
+                <button id="buttonSelect">Rechercher</button>
+            </div>
+            
+        </section>
+        <section id="searchByCity">
+            <label for="city">Recherche par nom de ville : </label>
+            <input type="text" id="city"><br>
+            <button id="buttonCity">Rechercher</button>
+        </section>
+    </article>
+    
+    <section id="affichage">
+        <div id="temperature">
+            <span>La température est de </span><span id="temp"></span><span>°C</span>
+        </div>
+        <div id="temps">
+            <div id="tps"></div>
+            <img src="" alt="image du temps" id="imgTps">
+        </div>
+        <div id="vent">
+            <span>vent : </span><span id="wind"></span><span>km/h</span>
+        </div>
+    </section>
+    <section id="semaine">
+        <h2>Evolution du temps toutes les 3 heures</h2>
+        <div id="evolution"></div>
+        <canvas id="lesTemp" width="200px" height="100px"></canvas>
+        
+    </section>
+    
+    
+</body>
+</html>
