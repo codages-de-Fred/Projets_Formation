@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //on import Hero qu'on a créé
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -10,25 +10,29 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  //définit un héros de type Hero
-  hero: Hero = {
-    id: 1,
-    name: 'Patman'
-  }
   //on récupère le tableau HEROES de mock-heroes.ts
-  heroes = HEROES;
+  heroes: Hero[]; //les: indiquent le type attendu
   //pour afficher le hero sélectionné
   selectedHero: Hero;
 
-  constructor() { }
+  //En indiquant la présence d'un service ds le constructor de notre component
+  //on idique à angular la nécessité d'injecter ledit service ds une propriété privée pour pouvoir l'utiliser
+  //en précisant private, angular rangera automatiquement le service ds une propriété privée qu'on pourra utiliser avec this.heroService
+  constructor(private heroService: HeroService) { }
   //lors de l'initialisation de la page
   //ngAfterViewInit() est équivalent de DOMLoadedContent
   ngOnInit(): void {
+    //pour l'afficher
+    this.getHeroes();
   }
   //déclare une fct permettant de sélectionner un héro
   //cette fct est appelée ds app.component.html
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
   }
 
 }
