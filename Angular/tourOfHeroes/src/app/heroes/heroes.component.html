@@ -1,0 +1,9 @@
+<h2>{{hero.name | uppercase}}</h2> <!--comme twig-->
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+    <label>
+        name:
+        <!--permet de changer les données en direct-->
+        <input [(ngModel)]="hero.name" />
+    </label>
+</div>
