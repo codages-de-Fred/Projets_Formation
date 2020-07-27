@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    width: 200px;    
+}
+li {
+    cursor: pointer;
+    background-color: #EEE;
+    margin: 5px;
+}
+li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+}
+li span {
+    background-color: #405061;
+    color: white;
+    padding: 2px;
+    border-radius: 4px;
+}
+.selected {
+    background-color: #CFD8DC;
+    color: white;
+}
+.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+}

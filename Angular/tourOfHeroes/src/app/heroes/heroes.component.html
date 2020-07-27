@@ -1,9 +1,16 @@
-<h2>{{hero.name | uppercase}}</h2> <!--comme twig-->
-<div><span>id: </span>{{hero.id}}</div>
-<div>
-    <label>
-        name:
-        <!--permet de changer les données en direct-->
-        <input [(ngModel)]="hero.name" />
-    </label>
-</div>
+<!--
+pour un héro -->
+<!-- <h2>{{hero.name | uppercase}}</h2> --> <!--comme twig-->
+<!-- <div><span>id: </span>{{hero.id}}</div> -->
+
+<h2>Les héros</h2>
+<ul>
+    <!-- on fait une boucle for (forEach) 
+    *ngFor est le nom pour appeler une boucle for pour angular -->
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <!--si on sélectionne le héros, se classe change -->
+        <span>{{ hero.id }}</span>{{ hero.name }}
+    </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
