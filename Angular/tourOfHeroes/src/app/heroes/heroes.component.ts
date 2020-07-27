@@ -32,7 +32,10 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    //subscribe est l'équivalent du addEventListener('load')
+    //il intervient pour l'Observable donc pour le comportement asynchrone
+    //donc comme pour le addEventListener('load'), on renvoie une fct qui est ici renvoi la liste des heroes
+    this.heroService.getHeroes().subscribe((heroes) => this.heroes = heroes);
   }
 
 }
