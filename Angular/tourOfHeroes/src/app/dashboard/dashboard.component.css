@@ -18,3 +18,14 @@
     background-color: #eee;
     color: #607d8b;
 }
+.dashboard div a {
+    color: white;
+    text-decoration: none;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    line-height: 120px;
+}
+.dashboard div a:hover {
+    color: #607d8b;
+}

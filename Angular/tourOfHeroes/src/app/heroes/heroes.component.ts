@@ -13,7 +13,6 @@ export class HeroesComponent implements OnInit {
   //on récupère le tableau HEROES de mock-heroes.ts
   heroes: Hero[]; //les: indiquent le type attendu
   //pour afficher le hero sélectionné
-  selectedHero: Hero;
 
   //En indiquant la présence d'un service ds le constructor de notre component
   //on idique à angular la nécessité d'injecter ledit service ds une propriété privée pour pouvoir l'utiliser
@@ -27,9 +26,6 @@ export class HeroesComponent implements OnInit {
   }
   //déclare une fct permettant de sélectionner un héro
   //cette fct est appelée ds app.component.html
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
 
   getHeroes(): void {
     //subscribe est l'équivalent du addEventListener('load')
