@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { ActivatedRoute } from '@angular/router';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -8,12 +10,23 @@ import { Hero } from '../hero';
 })
 export class HeroDetailComponent implements OnInit {
 
-  //@Input permet de préparer un component à recevoir une donnée en entrée lors de son appel
-  @Input() hero: Hero;
-
-  constructor() { }
+  id: number;
+  hero: Hero;
+  //on récupère la route qu'il l'a amenée ici
+  constructor(private route : ActivatedRoute, private heroService: HeroService) { }
 
   ngOnInit(): void {
+    this.id = +this.route.snapshot.paramMap.get('id');
+    //+ transforme une string (de la route) en number, on puvait utiliser parseInt()
+    //snapshot = on prend on capture de la route, au cas où si la route change
+    //paraMap = structure qui contient les paramètres
+    //get('id') renvoie l'id
+    //=> on récupère l'id ds les paramètres de la route qu'on a captée
+    this.getHero();
+  }
+
+  getHero() {
+    this.heroService.getHero(this.id).subscribe((data) => this.hero = data)
   }
 
 }

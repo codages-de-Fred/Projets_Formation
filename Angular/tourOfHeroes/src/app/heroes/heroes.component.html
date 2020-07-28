@@ -7,10 +7,12 @@ pour un héro -->
 <ul>
     <!-- on fait une boucle for (forEach) 
     *ngFor est le nom pour appeler une boucle for pour angular -->
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <!--si on sélectionne le héros, se classe change -->
-        <span>{{ hero.id }}</span>{{ hero.name }}
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{ hero.id }}</span>
+            <span>{{ hero.name }}</span>
+        </a>
+        
     </li>
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
