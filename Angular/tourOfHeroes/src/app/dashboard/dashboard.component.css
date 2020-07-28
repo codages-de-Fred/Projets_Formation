@@ -1,0 +1,20 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard div {
+    margin: 0 5px;
+    height: 120px;
+    width: 120px;
+    background-color: #3f525c;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+.dashboard div:hover {
+    cursor: pointer;
+    background-color: #eee;
+    color: #607d8b;
+}
