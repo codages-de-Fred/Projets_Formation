@@ -1,2 +1,8 @@
 <h1>{{title}}</h1>
-<app-heroes></app-heroes>
+<nav>
+    <!--pour ne pas recharger une page on utilise routerLink-->
+    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/dashboard">Dashboard</a>
+</nav>
+<!--on attend le chemin ds la barre d'adresse-->
+<router-outlet></router-outlet>
