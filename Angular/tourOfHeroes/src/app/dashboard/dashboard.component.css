@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 2px;
+    text-align: center;
 }
 .dashboard div:hover {
     cursor: pointer;
@@ -23,7 +24,6 @@
     text-decoration: none;
     height: 120px;
     width: 120px;
-    text-align: center;
     line-height: 120px;
 }
 .dashboard div a:hover {
