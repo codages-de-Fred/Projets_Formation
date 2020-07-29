@@ -1,0 +1,8 @@
+<input #taskInput>
+<button (click)="addTask(id, taskInput.value, line)">add</button>
+
+<div *ngFor="let todo of liste">
+    <!-- le click du span renvoie une fct pour modifier la class du span-->
+    <!-- le click du button supprime le todo en renvoyant la fct del(todo)-->
+    <span (click)="changeClass(todo)" [class.line]="todo.line">{{todo.nom}}</span><button (click)="del(todo)">delete</button>
+</div>
