@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../hero';
-import { of, Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 //pour effectuer des requêtes
 import { HttpClient } from '@angular/common/http';
 
@@ -24,5 +24,9 @@ export class HeroService {
   getHero(id: number): Observable<Hero> {
     //cherche le hero où son id est égal à celui envoyé en paramètre
     return this.http.get<Hero>('api/heroes/'+id);
+  }
+  updateHero(hero: Hero): Observable<any> {
+    //pour est pour remplacer une valeur ds la bdd
+    return this.http.put("api/heroes", hero);
   }
 }

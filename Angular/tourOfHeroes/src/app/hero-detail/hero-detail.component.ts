@@ -26,7 +26,13 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero() {
+    //on utilise subscribe car la fct renvoie un Observable
     this.heroService.getHero(this.id).subscribe((data) => this.hero = data)
+  }
+
+  save() {
+    this.heroService.updateHero(this.hero).subscribe();
+    //rien ds subscribe car on n'en a pas besoin, updateHero() s'en charge
   }
 
 }
