@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
 import { of, Observable, from } from 'rxjs';
 //pour effectuer des requêtes
 import { HttpClient } from '@angular/common/http';
@@ -24,6 +23,6 @@ export class HeroService {
   //pour hero-detail
   getHero(id: number): Observable<Hero> {
     //cherche le hero où son id est égal à celui envoyé en paramètre
-    return of(HEROES.find(hero => hero.id === id));
+    return this.http.get<Hero>('api/heroes/'+id);
   }
 }
