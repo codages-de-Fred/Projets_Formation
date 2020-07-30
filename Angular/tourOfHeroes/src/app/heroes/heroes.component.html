@@ -4,6 +4,14 @@ pour un héro -->
 <!-- <div><span>id: </span>{{hero.id}}</div> -->
 
 <h2>Les héros</h2>
+
+<div>
+    <label>New Hero Name : 
+        <input #heroName type="text">
+    </label>
+    <button (click)="addHero(heroName.value)">add</button>
+</div>
+
 <ul>
     <!-- on fait une boucle for (forEach) 
     *ngFor est le nom pour appeler une boucle for pour angular -->

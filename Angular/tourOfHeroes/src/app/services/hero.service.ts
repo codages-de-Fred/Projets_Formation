@@ -26,7 +26,12 @@ export class HeroService {
     return this.http.get<Hero>('api/heroes/'+id);
   }
   updateHero(hero: Hero): Observable<any> {
-    //pour est pour remplacer une valeur ds la bdd
+    //pour est pour remplacer une ressource avec une ressource de même type
+    //pour mettre à jour les données
     return this.http.put("api/heroes", hero);
+  }
+  createHero(hero: Hero): Observable<Hero> {
+    //pour créer une ressource on utilise la méthode POST
+    return this.http.post<Hero>("api/heroes", hero);
   }
 }

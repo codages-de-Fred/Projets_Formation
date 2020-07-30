@@ -34,4 +34,13 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe((heroes) => this.heroes = heroes);
   }
 
+  addHero(name: string): void {
+    //on ne donne pas l'id car c'est le serveur qui s'en chargera
+    //createHero attend un objet (donc id et name)
+    this.heroService.createHero({name} as Hero).subscribe((hero) => this.heroes.push(hero));
+    //donc même s'il manque l'id considère le comme un Hero, on force car le serveur gère les id et que les id
+    //pour diminuer le tps d'affichage :
+    //this.heroes.push({id: this.heroes.length+1, name: name});
+  }
+
 }
