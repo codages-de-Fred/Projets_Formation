@@ -8,8 +8,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 //on importe des fctionnalités avec le protocole HTTP (ex : requêtes GET, POST)
 import { HttpClientModule } from '@angular/common/http';
+//permet de simuler un serveur d'api stocké ds la mémoire de l'application pour tester les requêtes HTTP comme un véritable serveur
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     //le clientModule pour la gestion de requêtes
     HttpClientModule,
+    //simule un serveur stocké ds la mémoire
+    //il interceptera les requêtes et servira à la place des données définies ds le inMemoryDataService
+
+    HttpClientInMemoryWebApiModule.forRoot(
+      //on lui donne la route pour aller chercher les données
+      InMemoryDataService
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
