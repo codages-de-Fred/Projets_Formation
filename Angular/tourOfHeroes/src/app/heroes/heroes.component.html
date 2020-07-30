@@ -9,7 +9,7 @@ pour un héro -->
     <label>New Hero Name : 
         <input #heroName type="text">
     </label>
-    <button (click)="addHero(heroName.value)">add</button>
+    <button (click)="addHero(heroName.value); heroName.value=''">add</button>
 </div>
 
 <ul>

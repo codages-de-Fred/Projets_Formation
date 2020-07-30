@@ -1,0 +1,21 @@
+
+<div *ngIf="weather">
+    <div>
+        <h2><span>La météo pour : </span>{{weather.name}}</h2>
+    </div>
+    <div>
+        <span>La description du temps : </span>{{weather.weather[0].description}}
+    </div>
+    <div>
+        <span>La température est de : </span>{{weather.main.temp}} <span>°C</span>
+    </div>
+    <div id="divImg">
+        <img src="assets/images/{{weather.weather[0].icon}}.jpg" alt="image du temps">
+    </div>
+</div>
+<div id="search">
+    <label >Entrez le nom de la ville dont vous souhaitez avoir la météo : <input #city type="text"></label>
+    <button (click)="getWeatherCity(city.value)">search</button>
+</div>
+
+

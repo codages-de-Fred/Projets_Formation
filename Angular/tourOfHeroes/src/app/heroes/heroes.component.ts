@@ -35,6 +35,10 @@ export class HeroesComponent implements OnInit {
   }
 
   addHero(name: string): void {
+    name = name.trim(); //trim() retire les espaces avant et après une string
+    if(!name) { //si l'input est vide on ne renvoie rien
+      return
+    }
     //on ne donne pas l'id car c'est le serveur qui s'en chargera
     //createHero attend un objet (donc id et name)
     this.heroService.createHero({name} as Hero).subscribe((hero) => this.heroes.push(hero));

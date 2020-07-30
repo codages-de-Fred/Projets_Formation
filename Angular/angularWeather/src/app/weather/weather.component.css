@@ -1,0 +1,15 @@
+#search {
+    margin-top: 10%;
+}
+#divImg {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+}
+
+#divImg > img {
+    height: 100%;
+}
+
