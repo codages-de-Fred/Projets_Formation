@@ -8,6 +8,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+//on importe des fctionnalités avec le protocole HTTP (ex : requêtes GET, POST)
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     //ne pas oublié de le rajouter ds les imports (relancer le server)
-    FormsModule
+    FormsModule,
+    //le clientModule pour la gestion de requêtes
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
