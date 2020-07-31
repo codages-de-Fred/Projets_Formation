@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(32, 30, 30);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(45,223,235,1) 0%, rgba(254,246,246,1) 86%);
+    height: 100vh;
 }
