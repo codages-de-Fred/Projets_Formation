@@ -47,4 +47,12 @@ export class HeroesComponent implements OnInit {
     //this.heroes.push({id: this.heroes.length+1, name: name});
   }
 
+  deleteHero(hero: Hero): void {
+    this.heroService.deleteHero(hero).subscribe( () => {
+      //filter() on garde ceux qui n'ont pas l'id du héros sélectionné et envoyés ds le tableau
+    });
+    //si on sort filter du subscribe, la suppression s'affiche plus rapidement
+    this.heroes = this.heroes.filter( h => h.id !== hero.id);
+  }
+
 }
