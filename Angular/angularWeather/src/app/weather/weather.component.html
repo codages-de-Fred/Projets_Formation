@@ -1,22 +1,27 @@
-<div id="search">
-    <label >Entrez le nom de la ville dont vous souhaitez avoir la météo : <input #city type="text"></label>
-    <button (click)="getWeatherCity(city.value); city.value=''">search</button>
-</div>
-
-<a routerLink="/five-days">météo à 5 jours</a>
+<label for="select"></label>
+<select #select name="select" id="select">
+    <option value="hourly,daily">de l'instant</option>
+    <option value="current,daily">pour les prochaines heures</option>
+    <option value="current,hourly">pour les prochains jours</option>
+</select>
+<button (click)="getWeather(select.value)">afficher</button>
 
 <div *ngIf="weather">
-    <div>
-        <h2><span>La météo pour : </span>{{weather.name}}</h2>
-    </div>
-    <div>
-        <span>La description du temps : </span>{{weather.weather[0].description}}
-    </div>
-    <div>
-        <span>La température est de : </span>{{weather.main.temp}} <span>°C</span>
-    </div>
-    <div id="divImg">
-        <img src="assets/images/{{weather.weather[0].icon}}.jpg" alt="image du temps">
+    <div *ngIf="weather.current">
+
+
+        <div>
+            <h2><span>La météo pour : </span>{{weather.current.name}}</h2>
+        </div>
+        <div>
+            <span>La description du temps : </span>{{weather.current.weather[0].description}}
+        </div>
+        <div>
+            <span>La température est de : </span>{{weather.current.temp}} <span>°C</span>
+        </div>
+        <div id="divImg">
+            <img src="assets/images/{{weather.current.weather[0].icon}}.jpg" alt="image du temps">
+        </div>
     </div>
 </div>
 

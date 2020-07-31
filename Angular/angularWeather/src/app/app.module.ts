@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
-import { FiveDaysComponent } from './five-days/five-days.component';
+import { SearchNominationComponent } from './search-nomination/search-nomination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
-    FiveDaysComponent
+    SearchNominationComponent,
   ],
   imports: [
     BrowserModule,

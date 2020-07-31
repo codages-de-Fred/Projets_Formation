@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FiveDaysComponent } from './five-days/five-days.component';
+import { WeatherComponent } from './weather/weather.component';
+import { SearchNominationComponent } from './search-nomination/search-nomination.component';
 
 const routes: Routes = [
-  { path: "five-days", component: FiveDaysComponent}
+  //pour envoyer des paramètres
+  { path: "weather/:lat/:lon", component: WeatherComponent },
+  { path: "searchNomination", component: SearchNominationComponent},
+  { path: "", redirectTo: "/searchNomination", pathMatch: "full"}
 ];
 
 @NgModule({

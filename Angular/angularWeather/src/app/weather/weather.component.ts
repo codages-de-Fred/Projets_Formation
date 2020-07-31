@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-weather',
@@ -9,17 +10,24 @@ import { WeatherService } from '../weather.service';
 export class WeatherComponent implements OnInit {
 
   weather: object;
-  city: string = "Montpellier";
+  current: any;
+  lat: string;
+  lon: string;
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private weatherService: WeatherService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.weatherService.getCurrentWeather().subscribe((data) => this.weather = data);
-    this.weatherService.getCurrentWeather().subscribe( (data) => console.log(data));
+    //on récupère les paramètres envoyés lors du choix de la ville
+    this.lat = this.route.snapshot.paramMap.get('lat');
+    this.lon = this.route.snapshot.paramMap.get('lon');
+    this.getWeather(this.current);
   }
 
-  getWeatherCity(city) {
-    this.weatherService.getWeatherByCity(city).subscribe((data) => this.weather = data);
+  getWeather(choice: any): void {
+    console.log(choice)
+    this.weatherService.getWeather(this.lat,this.lon, choice).subscribe((data) => this.weather = (data));
+    this.weatherService.getWeather(this.lat,this.lon, choice).subscribe((data) => console.log(data));
+
   }
 
 }

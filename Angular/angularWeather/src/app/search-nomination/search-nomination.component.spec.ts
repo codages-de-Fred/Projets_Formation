@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FiveDaysComponent } from './five-days.component';
+import { SearchNominationComponent } from './search-nomination.component';
 
-describe('FiveDaysComponent', () => {
-  let component: FiveDaysComponent;
-  let fixture: ComponentFixture<FiveDaysComponent>;
+describe('SearchNominationComponent', () => {
+  let component: SearchNominationComponent;
+  let fixture: ComponentFixture<SearchNominationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiveDaysComponent ]
+      declarations: [ SearchNominationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FiveDaysComponent);
+    fixture = TestBed.createComponent(SearchNominationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

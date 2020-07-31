@@ -1,0 +1,15 @@
+<div>
+    <label>Entrez le nom de la ville : 
+        <input #search type="text">
+    </label>
+    <button (click)="getCity(search.value); search.value=''">search</button>
+</div>
+<div *ngIf="cities">
+    <h2>Sélectionnez la ville que vous souhaitez : </h2>
+    <div *ngFor="let city of cities">
+        <a routerLink="/weather/{{city.lat}}/{{city.lon}}" >
+            {{city.display_name}}<br>
+        </a>
+    </div>
+    
+</div>
