@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class WeatherComponent implements OnInit {
 
   weather: object;
-  current: any;
+  current: string = "hourly,daily";
   lat: string;
   lon: string;
 
@@ -24,10 +24,7 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather(choice: any): void {
-    console.log(choice)
     this.weatherService.getWeather(this.lat,this.lon, choice).subscribe((data) => this.weather = (data));
-    this.weatherService.getWeather(this.lat,this.lon, choice).subscribe((data) => console.log(data));
-
   }
 
 }

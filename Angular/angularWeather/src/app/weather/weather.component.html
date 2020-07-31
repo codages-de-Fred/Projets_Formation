@@ -1,15 +1,15 @@
+<!--pour que l'utilisateur choisisse sa météo-->
 <label for="select"></label>
 <select #select name="select" id="select">
-    <option value="hourly,daily">de l'instant</option>
-    <option value="current,daily">pour les prochaines heures</option>
-    <option value="current,hourly">pour les prochains jours</option>
+    <option value="hourly,daily">de l'instant</option><!--ne reste que current-->
+    <option value="current,daily">pour les prochaines heures</option><!--ne reste que hourly-->
+    <option value="current,hourly">pour les prochains jours</option><!--ne reste que daily-->
 </select>
 <button (click)="getWeather(select.value)">afficher</button>
 
 <div *ngIf="weather">
+    <!--pour la météo de l'instant, si current est gardé-->
     <div *ngIf="weather.current">
-
-
         <div>
             <h2><span>La météo pour : </span>{{weather.current.name}}</h2>
         </div>
@@ -23,6 +23,24 @@
             <img src="assets/images/{{weather.current.weather[0].icon}}.jpg" alt="image du temps">
         </div>
     </div>
+    <!--pour la météo par heure-->
+    <article *ngIf="weather.hourly">
+        <section *ngFor="let hour of weather.hourly">
+            <div>{{hour.dt*1000 | date:'shortTime'}}</div>
+            <div>{{hour.weather[0].description}}</div> 
+            <div>{{hour.temp}}°C</div>  
+            <div>{{hour.wind_speed}}km/h</div>   
+            <div><img src="assets/images/{{hour.weather[0].icon}}.jpg" alt="image du temps" class="tdImg"></div>    
+        </section>
+    </article>
+    <article *ngIf="weather.daily" id="divTableDaily">
+        <section *ngFor="let day of weather.daily">
+            <div>{{day.dt*1000 | date:'fullDate'}}</div>
+            <div>{{day.weather[0].description}}</div>
+            <div>{{day.temp.day}}°C</div>
+            <div><img src="assets/images/{{day.weather[0].icon}}.jpg" alt="image du temps"></div>
+        </section>
+    </article>
 </div>
 
 
