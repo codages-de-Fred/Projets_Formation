@@ -60,11 +60,14 @@
 
     <!--pour la météo à 7 jours-->
     <article *ngIf="weather.daily" id="divTableDaily">
-        <section *ngFor="let day of weather.daily">
-            <div>{{day.dt*1000 | date:'fullDate'}}</div>
-            <div>{{day.weather[0].description}}</div>
-            <div>{{day.temp.day}}°C</div>
-            <div><img src="assets/images/{{day.weather[0].icon}}.jpg" alt="image du temps"></div>
+        <section id="sectionDaily">
+            <div *ngFor="let day of weather.daily" class="divDaily">
+                <div class="days">{{day.dt*1000 | date:'fullDate'}}</div>
+                <div>{{day.weather[0].description}}</div>
+                <div>{{day.temp.day}}°C</div>
+                <div>vent : {{day.wind_speed}} km/h</div>
+                <div><img src="assets/images/{{day.weather[0].icon}}.jpg" alt="image du temps" class="imgDaily"></div>
+            </div>
         </section>
     </article>
 </div>

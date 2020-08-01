@@ -58,6 +58,28 @@ a {
 .hour {
     font-weight: bold;
 }
+#sectionDaily {
+    display: flex;
+    justify-content: space-around;
+}
+.divDaily {
+    max-width: 10%;
+    font-size: 0.8em;
+    background-color: rgb(226, 226, 246);
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px black;
+}
+.divDaily > div {
+    border: 1px solid rgb(180, 178, 178);
+}
+.days {
+    font-weight: bold;
+}
+.imgDaily {
+    width: 80%;
+    margin: auto;
+    padding: 3px;
+}
 
 
 
