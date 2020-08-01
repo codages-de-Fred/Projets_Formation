@@ -1,43 +1,64 @@
-<!--lien pour changer de ville-->
-<nav>
-    <button><a routerLink="">changer de ville</a></button>
-</nav>
+<div id="divNav">
+    <nav>
+        <button><a routerLink="">changer de ville</a></button>
+    </nav>
 
-<!--pour que l'utilisateur choisisse sa météo-->
-<label for="select"></label>
-<select #select name="select" id="select">
-    <option value="hourly,daily">de l'instant</option><!--ne reste que current-->
-    <option value="current,daily">pour les prochaines heures</option><!--ne reste que hourly-->
-    <option value="current,hourly">pour les prochains jours</option><!--ne reste que daily-->
-</select>
-<button (click)="getWeather(select.value)">afficher</button>
+    <div>
+        <!--pour que l'utilisateur choisisse sa météo-->
+        <label for="select">Prévisions : </label>
+        <select #select name="select" id="select">
+            <option value="hourly,daily">de l'instant</option><!--ne reste que current-->
+            <option value="current,daily">pour les prochaines heures</option><!--ne reste que hourly-->
+            <option value="current,hourly">pour les prochains jours</option><!--ne reste que daily-->
+        </select>
+        <button (click)="getWeather(select.value)">afficher</button>
+    </div>
+    
+</div>
+<!--lien pour changer de ville-->
+
 
 <div *ngIf="weather">
-    <!--pour la météo de l'instant, si current est gardé-->
-    <div *ngIf="weather.current">
-        <div>
-            <h2><span>La météo pour : </span>{{weather.current.name}}</h2>
-        </div>
-        <div>
-            <span>La description du temps : </span>{{weather.current.weather[0].description}}
-        </div>
-        <div>
-            <span>La température est de : </span>{{weather.current.temp}} <span>°C</span>
-        </div>
-        <div id="divImg">
-            <img src="assets/images/{{weather.current.weather[0].icon}}.jpg" alt="image du temps">
-        </div>
+    <div>
+        <h2>{{name}}</h2>
     </div>
-    <!--pour la météo par heure-->
+    <!--pour la météo de l'instant, si current est gardé-->
+    <article *ngIf="weather.current">
+        <div id="divCurrent">
+            <div>
+                <div class="currentClass">
+                    <span>La description du temps : </span><span class="response">{{weather.current.weather[0].description}}</span>
+                </div>
+                <div class="currentClass">
+                    <span>La température est de : </span><span class="response">{{weather.current.temp}} °C</span>
+                </div> 
+                <div class="currentClass">
+                    <span>Vitesse du vent : </span><span class="response">{{weather.current.wind_speed}} km/h</span>
+                </div> 
+                <div class="currentClass">
+                    <span>Taux d'humidité : </span><span class="response">{{weather.current.temp}} %</span>
+                </div> 
+            </div>
+            <div id="divImg">
+                <img src="assets/images/{{weather.current.weather[0].icon}}.jpg" alt="image du temps">
+            </div>
+        </div>
+    </article>
+
+    <!--pour la météo à 48 heures-->
     <article *ngIf="weather.hourly">
-        <section *ngFor="let hour of weather.hourly">
-            <div>{{hour.dt*1000 | date:'shortTime'}}</div>
-            <div>{{hour.weather[0].description}}</div> 
-            <div>{{hour.temp}}°C</div>  
-            <div>{{hour.wind_speed}}km/h</div>   
-            <div><img src="assets/images/{{hour.weather[0].icon}}.jpg" alt="image du temps" class="tdImg"></div>    
+        <section id="hourlySection">
+            <div *ngFor="let hour of weather.hourly"  class="hourlyDiv">
+                <div class="hour">{{hour.dt*1000 | date:'shortTime'}}</div>
+                <div>{{hour.weather[0].description}}</div> 
+                <div>{{hour.temp}}°C</div>  
+                <div>vent : {{hour.wind_speed}}km/h</div>   
+                <div><img src="assets/images/{{hour.weather[0].icon}}.jpg" alt="image du temps" class="hourlyImg"></div> 
+            </div>
         </section>
     </article>
+
+    <!--pour la météo à 7 jours-->
     <article *ngIf="weather.daily" id="divTableDaily">
         <section *ngFor="let day of weather.daily">
             <div>{{day.dt*1000 | date:'fullDate'}}</div>

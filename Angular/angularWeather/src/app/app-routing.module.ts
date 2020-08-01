@@ -5,7 +5,7 @@ import { SearchNominationComponent } from './search-nomination/search-nomination
 
 const routes: Routes = [
   //pour envoyer des paramètres
-  { path: "weather/:lat/:lon", component: WeatherComponent },
+  { path: "weather/:lat/:lon/:name", component: WeatherComponent },
   { path: "searchNomination", component: SearchNominationComponent},
   { path: "", redirectTo: "/searchNomination", pathMatch: "full"}
 ];

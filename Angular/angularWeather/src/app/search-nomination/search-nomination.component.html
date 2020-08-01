@@ -1,14 +1,13 @@
 <div id="divSearch">
-    <label>Entrez le nom de la ville : 
-        <input #search type="text">
-    </label>
+    <label>Entrez le nom de la ville :  </label>
+    <input #search type="text" autofocus>
     <button (click)="getCity(search.value); search.value=''">search</button>
 </div>
 
 <div *ngIf="cities" id="divCities">
     <h2>Sélectionnez la ville que vous souhaitez : </h2>
     <div *ngFor="let city of cities">
-        <a routerLink="/weather/{{city.lat}}/{{city.lon}}" >
+        <a routerLink="/weather/{{city.lat}}/{{city.lon}}/{{city.display_name}}" >
             {{city.display_name}}<br>
         </a>
     </div>
