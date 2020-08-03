@@ -9,8 +9,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { SearchNominationComponent } from './search-nomination/search-nomination.component';
 
 import fr from '@angular/common/locales/fr';
-import { registerLocaleData } from '@angular/common';
-registerLocaleData(fr);
+import { registerLocaleData } from '@angular/common'; //infos de langue
+registerLocaleData(fr); //permet d'enregistrer des infos de langue
 
 @NgModule({
   declarations: [
