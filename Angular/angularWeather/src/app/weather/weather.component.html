@@ -62,7 +62,7 @@
     <article *ngIf="weather.daily" id="divTableDaily">
         <section id="sectionDaily">
             <div *ngFor="let day of weather.daily" class="divDaily">
-                <div class="days">{{day.dt*1000 | date:'EEEE dd/MM/yyyy'}}</div>
+                <div class="days">{{day.dt*1000 | date:'EEEE dd/MM/yyyy':'fr-FR'}}</div>
                 <div>{{day.weather[0].description}}</div>
                 <div>{{day.temp.day}}°C</div>
                 <div>vent : {{day.wind_speed}} km/h</div>
