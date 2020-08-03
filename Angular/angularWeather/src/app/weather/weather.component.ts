@@ -19,9 +19,11 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     //on récupère les paramètres envoyés lors du choix de la ville
-    this.lat = this.route.snapshot.paramMap.get('lat');
-    this.lon = this.route.snapshot.paramMap.get('lon');
-    this.name = this.route.snapshot.paramMap.get('name');
+    this.route.params.subscribe( params => {
+      this.lat = params.lat;
+      this.lon = params.lon;
+      this.name = params.name;
+    })
     this.getWeather(this.current);
   }
 

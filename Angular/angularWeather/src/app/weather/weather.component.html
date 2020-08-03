@@ -49,7 +49,7 @@
     <article *ngIf="weather.hourly">
         <section id="hourlySection">
             <div *ngFor="let hour of weather.hourly"  class="hourlyDiv">
-                <div class="hour">{{hour.dt*1000 | date:'shortTime'}}</div>
+                <div class="hour">{{hour.dt*1000 | date:'HH:mm'}}</div>
                 <div>{{hour.weather[0].description}}</div> 
                 <div>{{hour.temp}}°C</div>  
                 <div>vent : {{hour.wind_speed}}km/h</div>   
@@ -62,7 +62,7 @@
     <article *ngIf="weather.daily" id="divTableDaily">
         <section id="sectionDaily">
             <div *ngFor="let day of weather.daily" class="divDaily">
-                <div class="days">{{day.dt*1000 | date:'fullDate'}}</div>
+                <div class="days">{{day.dt*1000 | date:'EEEE dd/MM/yyyy'}}</div>
                 <div>{{day.weather[0].description}}</div>
                 <div>{{day.temp.day}}°C</div>
                 <div>vent : {{day.wind_speed}} km/h</div>
