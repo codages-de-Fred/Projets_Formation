@@ -1,32 +1,32 @@
-<div *ngIf="thisCocktail">
-    <div>
-        <div>
-            <h2>{{thisCocktail.drinks[0].strDrink}}</h2>
-            <img src="{{thisCocktail.drinks[0].strDrinkThumb}}" alt="image du cocktail">
+<div *ngIf="thisCocktail" id="carte">
+    <section>
+        <div id="titre" [ngStyle]="{backgroundImage: 'url('+ thisCocktail.drinks[0].strDrinkThumb +')'}">
+            <span id="name">{{thisCocktail.drinks[0].strDrink}}</span>
         </div>
-        <div>
-           <div>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient1">{{thisCocktail.drinks[0].strIngredient1}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure1">{{thisCocktail.drinks[0].strMeasure1}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient2">{{thisCocktail.drinks[0].strIngredient2}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure2">{{thisCocktail.drinks[0].strMeasure2}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient3">{{thisCocktail.drinks[0].strIngredient3}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure3">{{thisCocktail.drinks[0].strMeasure3}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient4">{{thisCocktail.drinks[0].strIngredient4}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure4">{{thisCocktail.drinks[0].strMeasure4}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient5">{{thisCocktail.drinks[0].strIngredient5}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure5">{{thisCocktail.drinks[0].strMeasure5}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient6">{{thisCocktail.drinks[0].strIngredient6}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure6">{{thisCocktail.drinks[0].strMeasure6}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient7">{{thisCocktail.drinks[0].strIngredient7}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure7">{{thisCocktail.drinks[0].strMeasure7}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient8">{{thisCocktail.drinks[0].strIngredient8}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure8">{{thisCocktail.drinks[0].strMeasure8}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient9">{{thisCocktail.drinks[0].strIngredient9}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure9">{{thisCocktail.drinks[0].strMeasure9}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient10">{{thisCocktail.drinks[0].strIngredient10}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure10">{{thisCocktail.drinks[0].strMeasure10}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient11">{{thisCocktail.drinks[0].strIngredient11}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure11">{{thisCocktail.drinks[0].strMeasure11}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient12">{{thisCocktail.drinks[0].strIngredient12}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure12">{{thisCocktail.drinks[0].strMeasure12}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient13">{{thisCocktail.drinks[0].strIngredient13}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure13">{{thisCocktail.drinks[0].strMeasure13}}</span><br>
-                <span *ngIf="thisCocktail.drinks[0].strIngredient14">{{thisCocktail.drinks[0].strIngredient14}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure14">{{thisCocktail.drinks[0].strMeasure14}}</span><br>
-            </div>
-            <div>
-                <p>
-                    {{thisCocktail.drinks[0].strInstructions}}
-                </p>
-            </div> 
+        <div id="ingredients">
+            <span class="titles">Ingrédients : </span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient1">{{thisCocktail.drinks[0].strIngredient1}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure1">{{thisCocktail.drinks[0].strMeasure1}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient2">{{thisCocktail.drinks[0].strIngredient2}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure2">{{thisCocktail.drinks[0].strMeasure2}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient3">{{thisCocktail.drinks[0].strIngredient3}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure3">{{thisCocktail.drinks[0].strMeasure3}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient4">{{thisCocktail.drinks[0].strIngredient4}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure4">{{thisCocktail.drinks[0].strMeasure4}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient5">{{thisCocktail.drinks[0].strIngredient5}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure5">{{thisCocktail.drinks[0].strMeasure5}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient6">{{thisCocktail.drinks[0].strIngredient6}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure6">{{thisCocktail.drinks[0].strMeasure6}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient7">{{thisCocktail.drinks[0].strIngredient7}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure7">{{thisCocktail.drinks[0].strMeasure7}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient8">{{thisCocktail.drinks[0].strIngredient8}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure8">{{thisCocktail.drinks[0].strMeasure8}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient9">{{thisCocktail.drinks[0].strIngredient9}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure9">{{thisCocktail.drinks[0].strMeasure9}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient10">{{thisCocktail.drinks[0].strIngredient10}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure10">{{thisCocktail.drinks[0].strMeasure10}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient11">{{thisCocktail.drinks[0].strIngredient11}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure11">{{thisCocktail.drinks[0].strMeasure11}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient12">{{thisCocktail.drinks[0].strIngredient12}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure12">{{thisCocktail.drinks[0].strMeasure12}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient13">{{thisCocktail.drinks[0].strIngredient13}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure13">{{thisCocktail.drinks[0].strMeasure13}}</span></span>
+            <span><span *ngIf="thisCocktail.drinks[0].strIngredient14">{{thisCocktail.drinks[0].strIngredient14}} : </span><span *ngIf="thisCocktail.drinks[0].strMeasure14">{{thisCocktail.drinks[0].strMeasure14}}</span></span>
         </div>
-        
-    </div>
+    </section>
+    <div id="recetteDiv">
+        <span class="titles">Recette :</span><br>
+        <div id="recette">
+            <p>
+                {{thisCocktail.drinks[0].strInstructions}}
+            </p>
+        </div>
+    </div> 
 </div>
