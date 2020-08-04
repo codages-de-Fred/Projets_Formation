@@ -1,0 +1,18 @@
+<div id="search">
+    <label>Entrez le nom de l'ingrédient que vous souhaitez : </label>
+    <input #search type="text" (keyup.enter)="getList(search.value); search.value=''" autofocus>
+    <button (click)="getList(search.value); search.value=''" >search</button>
+</div>
+
+<div *ngIf="liste" id="liste">
+    <div *ngFor="let cocktail of liste.drinks">
+        <a routerLink="/cocktail/{{cocktail.strDrink}}">
+            <div class="cocktails">
+                <div><span class="name">{{cocktail.strDrink}}</span></div>
+                <img src="{{cocktail.strDrinkThumb}}" alt="image du cocktail">
+            </div>
+        </a>
+    </div>
+</div>
+<div *ngIf="nothing"><span>Cet ingrédient n'est pas répertorié</span></div>
+

@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ListIngredientsComponent } from './list-ingredients/list-ingredients.component';
 import { ListCocktailByIngredientComponent } from './list-cocktail-by-ingredient/list-cocktail-by-ingredient.component';
 import { CocktailComponent } from './cocktail/cocktail.component';
+import { SearchByNameComponent } from './search-by-name/search-by-name.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CocktailComponent } from './cocktail/cocktail.component';
     ListCocktailsComponent,
     ListIngredientsComponent,
     ListCocktailByIngredientComponent,
-    CocktailComponent
+    CocktailComponent,
+    SearchByNameComponent
   ],
   imports: [
     BrowserModule,

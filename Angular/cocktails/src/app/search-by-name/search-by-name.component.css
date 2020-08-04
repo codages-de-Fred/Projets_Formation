@@ -1,0 +1,47 @@
+#search {
+    margin: 5% auto;
+    border: none;
+}
+#search:focus {
+    border: none;
+}
+#liste {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+nav {
+    font-size: 2em;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+nav > a:hover {
+    color: rgb(23, 23, 126);
+}
+a {
+    color: rgb(24, 23, 23);
+    text-decoration: none;
+    cursor: pointer;
+}
+.cocktails {
+    width: 150px;
+    height: 200px;
+    border: 1px solid rgb(233, 229, 229);
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px black;
+    margin: 5px;
+    transition-duration: 1s;
+}
+.cocktails:hover {
+    box-shadow: none;
+}
+.name {
+    font-weight: bold;
+}
+.cocktails > div {
+    margin-bottom: 20px;
+}
+.cocktails > img {
+    width: 80%;
+}
