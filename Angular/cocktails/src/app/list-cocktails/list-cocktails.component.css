@@ -1,0 +1,23 @@
+#liste {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+.cocktails {
+    width: 100px;
+    height: 150px;
+    border: 1px solid rgb(233, 229, 229);
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px black;
+    margin: 5px;
+}
+.name {
+    font-weight: bold;
+}
+.cocktails > div {
+    margin-bottom: 20px;
+}
+.cocktails > img {
+    width: 80%;
+}

@@ -1,0 +1,20 @@
+<div>
+    <input #letter type="text">
+    <button (click)="getList(letter.value); letter.value=''">search</button>
+</div>
+
+
+<article>
+    <div *ngIf="listCocktail" id="liste">
+        <div *ngFor="let cocktail of listCocktail.drinks"  >
+            <div class="cocktails">
+                <div><span class="name">{{cocktail.strDrink}}</span></div>
+                <img src="{{cocktail.strDrinkThumb}}" alt="image du cocktail">
+            </div>
+            
+        </div>
+    </div>
+    <div >
+    
+    </div>
+</article>
