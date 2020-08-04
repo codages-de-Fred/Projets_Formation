@@ -1,0 +1,19 @@
+#listIngredients {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.ingredients {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(230, 224, 224);
+    text-align: center;
+    margin: 2px;
+}
+.noms {
+    background-color: rgb(165, 147, 147);
+    font-weight: bold;
+}
+.noms:hover {
+    background-color: rgb(165, 165, 165);
+}

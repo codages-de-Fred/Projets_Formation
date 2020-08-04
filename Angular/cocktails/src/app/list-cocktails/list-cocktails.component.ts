@@ -17,11 +17,8 @@ export class ListCocktailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getList(letter: string) {
-    if(letter.length < 2) {
-      this.list.getList(letter).subscribe(data => console.log(data));
-      return this.list.getList(letter).subscribe(data => this.listCocktail = data);
-    }
+  getList(letter) {
+    return this.list.getList(letter).subscribe(data => this.listCocktail = data);
   }
 
   getIngredients(id: string) {

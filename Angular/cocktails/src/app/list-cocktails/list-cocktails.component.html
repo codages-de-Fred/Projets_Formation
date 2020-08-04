@@ -1,16 +1,53 @@
-<div>
-    <input #letter type="text">
-    <button (click)="getList(letter.value); letter.value=''">search</button>
-</div>
+<nav>
+    <a #letter1 (click)="getList(letter1.textContent)">1</a>,
+    <a #letter2 (click)="getList(letter2.textContent)">2</a>,
+    <a #letter3 (click)="getList(letter3.textContent)">3</a>,
+    <a #letter4 (click)="getList(letter4.textContent)">4</a>,
+    <a #letter5 (click)="getList(letter5.textContent)">5</a>,
+    <a #letter6 (click)="getList(letter6.textContent)">6</a>,
+    <a #letter7 (click)="getList(letter7.textContent)">7</a>,
+    <a #letter8 (click)="getList(letter8.textContent)">8</a>,
+    <a #letter9 (click)="getList(letter9.textContent)">9</a>,
+    <a #letter0 (click)="getList(letter0.textContent)">0</a>,
+    <a #lettera (click)="getList(lettera.textContent)">a</a>,
+    <a #letterb (click)="getList(letterb.textContent)">b</a>,
+    <a #letterc (click)="getList(letterc.textContent)">c</a>,
+    <a #letterd (click)="getList(letterd.textContent)">d</a>,
+    <a #lettere (click)="getList(lettere.textContent)">e</a>,
+    <a #letterf (click)="getList(letterf.textContent)">f</a>,
+    <a #letterg (click)="getList(letterg.textContent)">g</a>,
+    <a #letterh (click)="getList(letterh.textContent)">h</a>,
+    <a #letteri (click)="getList(letteri.textContent)">i</a>,
+    <a #letterj (click)="getList(letterj.textContent)">j</a>,
+    <a #letterk (click)="getList(letterk.textContent)">k</a>,
+    <a #letterl (click)="getList(letterl.textContent)">l</a>,
+    <a #letterm (click)="getList(letterm.textContent)">m</a>,
+    <a #lettern (click)="getList(lettern.textContent)">n</a>,
+    <a #lettero (click)="getList(lettero.textContent)">o</a>,
+    <a #letterp (click)="getList(letterp.textContent)">p</a>,
+    <a #letterq (click)="getList(letterq.textContent)">q</a>,
+    <a #letterr (click)="getList(letterr.textContent)">r</a>,
+    <a #letters (click)="getList(letters.textContent)">s</a>,
+    <a #lettert (click)="getList(lettert.textContent)">t</a>,
+    <a #letteru (click)="getList(letteru.textContent)">u</a>,
+    <a #letterv (click)="getList(letterv.textContent)">v</a>,
+    <a #letterw (click)="getList(letterw.textContent)">w</a>,
+    <a #letterx (click)="getList(letterx.textContent)">x</a>,
+    <a #lettery (click)="getList(lettery.textContent)">y</a>,
+    <a #letterz (click)="getList(letterz.textContent)">z</a>
+</nav>
 
 
 <article>
     <div *ngIf="listCocktail" id="liste">
         <div *ngFor="let cocktail of listCocktail.drinks"  >
-            <div class="cocktails">
-                <div><span class="name">{{cocktail.strDrink}}</span></div>
-                <img src="{{cocktail.strDrinkThumb}}" alt="image du cocktail">
-            </div>
+            <a routerLink="/cocktail/{{cocktail.strDrink}}">
+                <div class="cocktails">
+                    <div><span class="name">{{cocktail.strDrink}}</span></div>
+                    <img src="{{cocktail.strDrinkThumb}}" alt="image du cocktail">
+                </div>
+            </a>
+            
             
         </div>
     </div>

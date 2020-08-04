@@ -1,0 +1,10 @@
+<div *ngIf="listCocktails" id="liste">
+    <div *ngFor="let cocktail of listCocktails.drinks">
+        <a routerLink="/cocktail/{{cocktail.strDrink}}">
+            <div class="cocktails">
+                <div><span class="name">{{cocktail.strDrink}}</span></div>
+                <img src="{{cocktail.strDrinkThumb}}" alt="image du cocktail">
+            </div>
+        </a>
+    </div>
+</div>

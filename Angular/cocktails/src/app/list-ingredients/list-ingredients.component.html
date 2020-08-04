@@ -1,0 +1,9 @@
+<h2>La liste des ingrédients</h2>
+
+<div *ngIf="ingredients" id="listIngredients">
+    <div *ngFor="let ingredient of ingredients.drinks" class="ingredients" >
+            <a routerLink="/listByIngredient/{{ingredient.strIngredient1}}">
+                <span class="noms">{{ingredient.strIngredient1}}</span>
+            </a>
+    </div>
+</div>
