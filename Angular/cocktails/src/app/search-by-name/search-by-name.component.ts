@@ -17,13 +17,15 @@ export class SearchByNameComponent implements OnInit {
   }
 
   getList(name: string) {
-    this.search.getName(name).subscribe(data => this.liste=(data));
-    if (this.liste) {
-      this.nothing=false;
-      return this.liste;
-    } else {
-      this.nothing=true;
-    }
-  }
+    this.search.getName(name).subscribe(data => {
+      this.liste = (data); 
+      if (this.liste) {
+        this.nothing = false;
+        return this.liste;
+      } else {
+        this.nothing = true;
+      }
+    });
 
+  }
 }
