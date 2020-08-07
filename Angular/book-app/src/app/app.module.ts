@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenreComponent } from './genre/genre.component';
 import { HttpClientModule } from "@angular/common/http";
+import { OneGenreComponent } from './one-genre/one-genre.component';
+import { UpdateGenreComponent } from './update-genre/update-genre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GenreComponent
+    GenreComponent,
+    OneGenreComponent,
+    UpdateGenreComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<a rooterLink="genre"><button>liste des genres</button></a>
+<div *ngIf="genre">
+    {{genre.name}}
+    <a routerLink="/updateGenre/{{genre.id}}"><button>modifier</button></a>
+</div>
+

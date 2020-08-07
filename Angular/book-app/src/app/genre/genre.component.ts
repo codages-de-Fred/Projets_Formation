@@ -10,12 +10,30 @@ export class GenreComponent implements OnInit {
 
   constructor(private genreService: GenreService) { }
 
+  genres: object;
+
   ngOnInit(): void {
     this.getAll();
   }
 
   getAll() {
-    this.genreService.getAll().subscribe(data => console.log(data));
+    this.genreService.getAll().subscribe(
+      data => {
+        this.genres = data,
+        console.log(data)});
   }
 
+  delete(id: number) {
+    this.genreService.delete(id).subscribe(() => {
+      this.getAll();
+    });
+  }
+
+  add(name: string) {
+    let genre = { name : name }
+    this.genreService.create(genre).subscribe(() => {
+      this.getAll();
+    });
+
+  }
 }

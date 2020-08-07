@@ -4,19 +4,13 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class GenreService {
+export class UpdateService {
 
   private url = "https://localhost:8000/genre";
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(this.url);
-  }
-  delete(id: number) {
-    return this.http.delete(this.url+"/"+id);
-  }
-  create(name) {
-    return this.http.post(this.url, name);
+  update(id: number, name: object) {
+    return this.http.put(this.url+"/"+id, name);
   }
 }
