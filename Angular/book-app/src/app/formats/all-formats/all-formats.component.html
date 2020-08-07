@@ -1,0 +1,8 @@
+<h1>La liste des formats de livres</h1>
+
+<div *ngIf="formats">
+    <div *ngFor="let format of formats">
+        <a routerLink="">{{format.name}}</a><button (click)="delete(format.id)"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+    </div>
+</div>
+

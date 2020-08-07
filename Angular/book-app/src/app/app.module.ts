@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GenreComponent } from './genre/genre.component';
+import { GenreComponent } from './genres/genre/genre.component';
 import { HttpClientModule } from "@angular/common/http";
-import { OneGenreComponent } from './one-genre/one-genre.component';
-import { UpdateGenreComponent } from './update-genre/update-genre.component';
+import { OneGenreComponent } from './genres/one-genre/one-genre.component';
+import { UpdateGenreComponent } from './genres/update-genre/update-genre.component';
+import { AllFormatsComponent } from './formats/all-formats/all-formats.component';
+import { OneFormatComponent } from './formats/one-format/one-format.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GenreComponent,
     OneGenreComponent,
-    UpdateGenreComponent
+    UpdateGenreComponent,
+    AllFormatsComponent,
+    OneFormatComponent
   ],
   imports: [
     BrowserModule,
