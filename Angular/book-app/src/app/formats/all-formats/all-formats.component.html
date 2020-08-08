@@ -2,7 +2,32 @@
 
 <div *ngIf="formats">
     <div *ngFor="let format of formats">
-        <a routerLink="">{{format.name}}</a><button (click)="delete(format.id)"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+        <a routerLink="/oneFormat/{{format.id}}">{{format.name}}</a><button (click)="delete(format.id)"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+    </div>
+    <div>
+        <label>Ajouter un nouveau format : </label>
+        <form [formGroup]="checkoutForm" (ngSubmit)=addFormat(checkoutForm.value)>
+            <div>
+                <label>Le nom du format : </label>
+                <input formControlName="name" type="text">
+            </div>
+            <div>
+                <label>La largeur du format : </label>
+                <input formControlName="width" type="number">
+            </div>
+            <div>
+                <label>La hauteur du format : </label>
+                <input formControlName="height" type="number">
+            </div>
+            <div>
+                <label>L'orientation du format : </label>
+                <select formControlName="landscape">
+                    <option value=0>portrait</option>
+                    <option value=1>paysage</option>
+                </select>
+            </div>
+            <button type="submit">ajouter</button>
+        </form>
     </div>
 </div>
 

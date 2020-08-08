@@ -14,7 +14,11 @@ export class AllFormatsService {
     return this.http.get(this.url);
   }
 
-  delete(id) {
+  delete(id: number) {
     return this.http.delete(this.url+"/"+id);
+  }
+
+  addFormat(format: object) {
+    return this.http.post(this.url, format);
   }
 }
