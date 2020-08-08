@@ -1,0 +1,19 @@
+<a routerLink="/format"><button>retour à la liste des formats</button></a>
+
+<div *ngIf="format">
+    <h2>Format : {{format.name}}</h2>
+    <div>
+        <span>Largeur : {{format.width}}cm</span>
+    </div>
+    <div>
+        <span>Hauteur : {{format.height}}cm</span>
+    </div>
+    <div *ngIf="format.landscape">
+        <span>Orientation : paysage</span>
+    </div>
+    <div *ngIf="!format.landscape">
+        <span>Orientation : portrait</span>
+    </div>
+</div>
+
+<a routerLink=""><button>modifier</button></a>
