@@ -1,1 +1,25 @@
-<p>update-format works!</p>
+<h1>Modidifier le format</h1>
+<div *ngIf="format">
+    <form [formGroup]="checkoutForm" (ngSubmit)=updateThisFormat(checkoutForm.value)>
+        <div>
+            <label>Le nom du format : </label>
+            <input formControlName="name" type="text" placeholder="{{format.name}}">
+        </div>
+        <div>
+            <label>La largeur du format : </label>
+            <input formControlName="width" type="number" step="any" placeholder="{{format.width}}">
+        </div>
+        <div>
+            <label>La hauteur du format : </label>
+            <input formControlName="height" type="number" step="any" placeholder="{{format.height}}">
+        </div>
+        <div>
+            <label>L'orientation du format : </label>
+            <select formControlName="landscape">
+                <option value=0 >portrait</option>
+                <option value=1>paysage</option>
+            </select>
+        </div>
+        <button type="submit">modifier</button>
+    </form>
+</div>

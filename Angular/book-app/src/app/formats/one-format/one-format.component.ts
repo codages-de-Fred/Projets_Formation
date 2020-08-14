@@ -20,7 +20,6 @@ export class OneFormatComponent implements OnInit {
   }
   
   getOne(id: number) {
-    this.oneFormat.getOne(id).subscribe(data => console.log(data));
     return this.oneFormat.getOne(id).subscribe(data => this.format = data);
   }
 }

@@ -7,13 +7,15 @@ import { UpdateGenreComponent } from "./genres/update-genre/update-genre.compone
 
 import { AllFormatsComponent } from "./formats/all-formats/all-formats.component";
 import { OneFormatComponent } from "./formats/one-format/one-format.component";
+import { UpdateFormatComponent } from "./formats/update-format/update-format.component";
 
 const routes: Routes = [
   { path: 'genre', component: GenreComponent},
   { path: 'oneGenre/:id', component: OneGenreComponent},
   { path: 'updateGenre/:id', component: UpdateGenreComponent },
   { path: 'format', component: AllFormatsComponent},
-  { path: 'oneFormat/:id', component: OneFormatComponent}
+  { path: 'oneFormat/:id', component: OneFormatComponent},
+  { path: 'updateFormat/:format', component: UpdateFormatComponent},
 ];
 
 @NgModule({
