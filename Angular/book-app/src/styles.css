@@ -1,3 +1,43 @@
 body {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: rgb(24, 23, 23);
+}
+.listes {
+    width: 70%;
+    background-color: rgb(207, 197, 197);
+    border-radius: 10px;
+    margin: auto;
+}
+.listeDiv {
+    padding-top: 5%;
+}
+.liste {
+    text-align: justify;
+    margin-left: 10%;
+    line-height: 2em;
+}
+.links {
+    background-color: rgb(224, 213, 213);
+}
+.links:hover {
+    background-color: rgb(218, 179, 218);
+}
+.corbeilles {
+    margin-left: 10px;
+    cursor: pointer;
+    width: 30px;
+}
+.corbeilles > img {
+    width: 70%;
+}
+.add {
+    padding-bottom: 5%;
+}
+.formulaires {
+    text-align: justify;
+    margin-left: 10%;
 }

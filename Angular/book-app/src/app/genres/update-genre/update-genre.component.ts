@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UpdateService } from "../services/update.service";
+import { OneGenreService } from "../services/one-genre.service";
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,12 +11,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateGenreComponent implements OnInit {
 
   id;
+  genre: object;
 
-  constructor(private update: UpdateService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private update: UpdateService, private route: ActivatedRoute, private router: Router, private oneGenre: OneGenreService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = params.id;
+      this.oneGenre.getOneGenre(params.id).subscribe(data => {
+        this.genre = data;
+      });
     })
   }
 

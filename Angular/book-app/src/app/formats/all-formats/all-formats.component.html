@@ -1,12 +1,15 @@
 <h1>La liste des formats de livres</h1>
 
-<div *ngIf="formats">
-    <div *ngFor="let format of formats">
-        <a routerLink="/oneFormat/{{format.id}}">{{format.name}}</a><button (click)="delete(format.id)"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+<div *ngIf="formats" class="listes">
+    <div class="listeDiv">
+        <div *ngFor="let format of formats" class="liste">
+            <a routerLink="/oneFormat/{{format.id}}" class="links">{{format.name}}</a>
+            <button (click)="delete(format.id)" class="corbeilles"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+        </div>
     </div>
-    <div>
-        <label>Ajouter un nouveau format : </label>
-        <form [formGroup]="checkoutForm" (ngSubmit)=addFormat(checkoutForm.value)>
+    <div class="add">
+        <h2>Ajouter un nouveau format : </h2>
+        <form [formGroup]="checkoutForm" (ngSubmit)=addFormat(checkoutForm.value) class="formulaires">
             <div>
                 <label>Le nom du format : </label>
                 <input formControlName="name" type="text">

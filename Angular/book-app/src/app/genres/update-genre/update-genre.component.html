@@ -1,5 +1,10 @@
 <div *ngIf="id">
-    <label >Insérez le nouveau nom de ce genre : </label>
-    <input #name type="text">
-    <button (click)="updateGenre(name.value)">register</button>
+    <div *ngIf="genre">
+        <label >Insérez le nouveau nom de ce genre : </label>
+        <input #name type="text" placeholder="{{genre.name}}">
+        <button (click)="updateGenre(name.value)">register</button>
+        <div>
+            <a routerLink="/genre"><button>annuler</button></a>
+        </div>
+    </div>
 </div>

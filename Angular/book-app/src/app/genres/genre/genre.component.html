@@ -1,10 +1,13 @@
 <h1>Liste des genres</h1>
 
-<div *ngIf="genres">
-    <div *ngFor="let genre of genres">
-        <a routerLink="/oneGenre/{{genre.id}}">{{genre.name}}</a><button (click)="delete(genre.id)"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+<div *ngIf="genres" class="listes">
+    <div  class="listeDiv">
+        <div *ngFor="let genre of genres" class="liste">
+            <a routerLink="/oneGenre/{{genre.id}}" class="links">{{genre.name}}</a>
+            <button (click)="delete(genre.id)" class="corbeilles"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
+        </div>
     </div>
-    <div>
+    <div class="add">
         <h2>ajouter un nouveau genre</h2>
         <label >entrer le nom du nouveau genre : </label>
         <input #name type="text">
