@@ -1,23 +1,38 @@
-<form [formGroup]="changeForm">
-    <div>
-        <span>Prénom : </span>
-        <input type="text" formControlName="firstName">
-    </div>
-    <div>
-        <span>Nom : </span>
-        <input type="text" formControlName="lastName">
-    </div>
-    <div>
-        <span>Nationalité : </span>
-        <input type="text" formControlName="nationality">
-    </div>
-    <div>
-        <span>Date de naissance : </span>
-        <input type="text" formControlName="dob">
-    </div>
-    <div>
-        <span>Date de décès : </span>
-        <input type="text" formControlName="dod">
-    </div>
-    <button type="submit">modifier</button>
-</form>
+<div *ngIf="changeForm && dateForm">
+    <form [formGroup]="changeForm" (ngSubmit)="update()">
+        <div>
+            <span>Prénom : </span>
+            <input type="text" formControlName="firstName">
+        </div>
+        <div>
+            <span>Nom : </span>
+            <input type="text" formControlName="lastName">
+        </div>
+        <div>
+            <span>Nationalité : </span>
+            <input type="text" formControlName="nationality">
+        </div>
+        <form [formGroup]="dateForm" *ngIf="!editDateForm">
+            <div>
+                <span>Date de naissance : </span>
+                <input type="text" formControlName="dob">
+            </div>
+            <div>
+                <span>Date de décès : </span>
+                <input type="text" formControlName="dod">
+            </div>
+            <button (click)="changeDateForm()">modifier les dates</button>
+        </form>
+        <form [formGroup]="editDateForm" *ngIf="editDateForm">
+            <div>
+                <span>Date de naissance : </span>
+                <input type="date" formControlName="dob">
+            </div>
+            <div>
+                <span>Date de décès : </span>
+                <input type="date" formControlName="dod">
+            </div>
+        </form>
+        <button type="submit">modifier</button>
+    </form>
+</div>
