@@ -30,8 +30,8 @@ export class UpdateAuthorComponent implements OnInit {
       firstName: [author.firstName],
       lastName: [author.lastName],
       nationality: [author.nationality],
-      dob: [author.dob],
-      dod: [author.dod],
+      dob: [new Date(author.dob).toLocaleDateString()],
+      dod: [new Date(author.dod).toLocaleDateString()],
       dead: Boolean
     }) 
   }
