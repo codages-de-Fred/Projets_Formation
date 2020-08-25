@@ -1,7 +1,7 @@
 export interface Author {
     id: number
-    firstname: string
-    lastname: string
+    firstName: string
+    lastName: string
     nationality: string
     dob: string
     dod: string

@@ -1,3 +1,9 @@
+section {
+    display: flex;
+}
+#add {
+    margin: 10%;
+}
 .add:hover {
     cursor: pointer;
 }

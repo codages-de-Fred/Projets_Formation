@@ -1,5 +1,5 @@
 <section>
-    <div>
+    <div id="add">
         <div class="add" (click)="afficheForm()">
             <span>Ajouter un auteur</span>
         </div>
@@ -7,11 +7,11 @@
             <form [formGroup]="formAdd" (ngSubmit)="createAuthor()">
                 <div>
                     <span>Prénom : </span>
-                    <input type="text" formControlName="firstname">
+                    <input type="text" formControlName="firstName">
                 </div>
                 <div>
                     <span>Nom : </span>
-                    <input type="text" formControlName="lastname">
+                    <input type="text" formControlName="lastName">
                 </div>
                 <div>
                     <span>Nationalité : </span>
@@ -31,23 +31,32 @@
         </div>
     </div>
 
-    <div *ngFor="let author of authors" >
-        <span class="names" (click)="changeAccesDetail()">{{author.firstName}} {{author.lastName}}</span>
-        <button>modifier</button><button>supprimer</button>
-        <div *ngIf="accesDetail">
-            <div>
-                Nationalité : {{author.nationality}}
-            </div>
-            <div>
-                Date de naissance : {{author.dob | date:'dd/MM/yyyy':'fr-FR'}}
-            </div>
-            <div *ngIf="author.dead">
-                Date de décès : {{author.dod | date:'dd/MM/yyyy':'fr-FR'}}
-            </div>
-            <span *ngIf="author.books">
-                <span *ngFor="let book of author.books">book</span>
-            </span>
-            <button (click)="changeAccesDetail()">réduire</button>
+    <div *ngIf="accesDetail && oneAuthor">
+        <div>
+            Prénom : {{oneAuthor.firstName}}
+        </div>
+        <div>
+            Nom : {{oneAuthor.lastName}}
+        </div>
+        <div>
+            Nationalité : {{oneAuthor.nationality}}
+        </div>
+        <div>
+            Date de naissance : {{oneAuthor.dob | date:'dd/MM/yyyy':'fr-FR'}}
+        </div>
+        <div *ngIf="oneAuthor.dead">
+            Date de décès : {{oneAuthor.dod | date:'dd/MM/yyyy':'fr-FR'}}
+        </div>
+        <span *ngIf="oneAuthor.books">
+            <span *ngFor="let book of oneAuthor.books">book</span>
+        </span>
+        <button (click)="reduceAuthor()">réduire</button>
+    </div>
+
+    <div *ngIf="accesListe">
+        <div *ngFor="let author of authors" >
+            <span class="names" (click)="selectAuthor(author)">{{author.firstName}} {{author.lastName}}</span>
+            <button>modifier</button><button (click)="delete(author)">supprimer</button>
         </div>
     </div>
 </section>
