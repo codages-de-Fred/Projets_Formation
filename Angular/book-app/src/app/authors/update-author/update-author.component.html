@@ -1,0 +1,23 @@
+<form [formGroup]="changeForm">
+    <div>
+        <span>Prénom : </span>
+        <input type="text" formControlName="firstName">
+    </div>
+    <div>
+        <span>Nom : </span>
+        <input type="text" formControlName="lastName">
+    </div>
+    <div>
+        <span>Nationalité : </span>
+        <input type="text" formControlName="nationality">
+    </div>
+    <div>
+        <span>Date de naissance : </span>
+        <input type="text" formControlName="dob">
+    </div>
+    <div>
+        <span>Date de décès : </span>
+        <input type="text" formControlName="dod">
+    </div>
+    <button type="submit">modifier</button>
+</form>

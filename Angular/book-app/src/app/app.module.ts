@@ -13,6 +13,7 @@ import { AllFormatsComponent } from './formats/all-formats/all-formats.component
 import { OneFormatComponent } from './formats/one-format/one-format.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
 import { AllAuthorsComponent } from './authors/all-authors/all-authors.component';
+import { UpdateAuthorComponent } from './authors/update-author/update-author.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AllAuthorsComponent } from './authors/all-authors/all-authors.component
     AllFormatsComponent,
     OneFormatComponent,
     UpdateFormatComponent,
-    AllAuthorsComponent
+    AllAuthorsComponent,
+    UpdateAuthorComponent
   ],
   imports: [
     BrowserModule,

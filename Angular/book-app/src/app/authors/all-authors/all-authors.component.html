@@ -56,7 +56,7 @@
     <div *ngIf="accesListe">
         <div *ngFor="let author of authors" >
             <span class="names" (click)="selectAuthor(author)">{{author.firstName}} {{author.lastName}}</span>
-            <button>modifier</button><button (click)="delete(author)">supprimer</button>
+            <button routerLink="/update-author/{{author.id}}">modifier</button><button (click)="delete(author)">supprimer</button>
         </div>
     </div>
 </section>

@@ -21,7 +21,7 @@ export class AllAuthorsComponent implements OnInit {
   accesListe: boolean = true;
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(data => {this.authors = data; console.log(data)});
+    this.service.getAll().subscribe(data => {this.authors = data});
   }
 
   changeAccesFormulaireAdd(): void {
@@ -58,7 +58,6 @@ export class AllAuthorsComponent implements OnInit {
     } else {
       newAuthor.dead = true;
     }
-    console.log(newAuthor)
     this.changeAccesFormulaireAdd();
     return this.service.create(newAuthor).subscribe(() => this.ngOnInit());
   }
