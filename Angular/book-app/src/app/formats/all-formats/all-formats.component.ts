@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllFormatsService } from "../services/all-formats.service";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-all-formats',
@@ -10,7 +10,7 @@ import { FormBuilder } from "@angular/forms";
 export class AllFormatsComponent implements OnInit {
 
   formats: object;
-  checkoutForm: object;
+  checkoutForm: FormGroup;
 
   constructor(private allFormats: AllFormatsService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
@@ -26,7 +26,6 @@ export class AllFormatsComponent implements OnInit {
   }
 
   getAll() {
-    this.allFormats.getAll().subscribe(data => console.log(data));
     return this.allFormats.getAll().subscribe(data => this.formats = (data));
   }
 
@@ -35,12 +34,9 @@ export class AllFormatsComponent implements OnInit {
   }
 
   addFormat(form: object) {
-    let format = {
-      name : Object.values(form)[0],
-      height : Object.values(form)[1],
-      width: Object.values(form)[2],
-      landscape: Boolean(Object.values(form)[3])
-    };
+    let format = this.checkoutForm.value;
+    //convertir 1 ou 0 en true/false
+    format.landscape = format.landscape === "1" ? true : false;
     return this.allFormats.addFormat(format).subscribe(() => this.getAll());
   }
 }

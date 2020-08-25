@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenreService } from "../services/genre.service";
+import { FormBuilder, Form, FormGroup, Validators } from "@angular/forms";
+import { Genre } from "../genre";
 
 @Component({
   selector: 'app-genre',
@@ -8,12 +10,19 @@ import { GenreService } from "../services/genre.service";
 })
 export class GenreComponent implements OnInit {
 
-  constructor(private genreService: GenreService) { }
+  constructor(private genreService: GenreService, private fb: FormBuilder) { }
 
   genres: object;
+  createForm: FormGroup;
 
   ngOnInit(): void {
     this.getAll();
+    this.createForm = this.fb.group(
+      {
+        //options de validations, ici doit être rempli et nb de caractère < 50
+        name: ['', [Validators.required, Validators.maxLength(50)]]
+      }
+    )
   }
 
   getAll() {
@@ -29,11 +38,12 @@ export class GenreComponent implements OnInit {
     });
   }
 
-  add(name: string) {
-    let genre = { name : name }
-    this.genreService.create(genre).subscribe(() => {
+  add(genre: Genre) {
+    this.genreService.create(this.createForm.value).subscribe(() => {
       this.getAll();
     });
-
   }
+
+  //pour faire un raccourci ds le html
+  get name() {return this.createForm.get('name')}
 }

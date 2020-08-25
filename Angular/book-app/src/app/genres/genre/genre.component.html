@@ -7,10 +7,19 @@
             <button (click)="delete(genre.id)" class="corbeilles"><img src="/assets/icones/delete.svg" alt="corbeille"></button>
         </div>
     </div>
-    <div class="add">
-        <h2>ajouter un nouveau genre</h2>
-        <label >entrer le nom du nouveau genre : </label>
-        <input #name type="text">
-        <button (click)=add(name.value)>+</button>
-    </div>
+    <form [formGroup] = 'createForm' class="add" (ngSubmit)="add()">
+        <label >Ajouter un genre : </label>
+        <input type="text" formControlName="name">
+        <!--si le formulaire n'est pas valide le bouton n'est pas actif-->
+        <button type="submit" [disabled] ="!createForm.valid">ajouter</button>
+        <!--utilisation des validators du formulaire-->
+        <div *ngIf="name.invalid">
+            <span *ngIf="name.errors.required  && createForm.touch">
+                Le nom est requis
+            </span>
+            <span *ngIf="name.errors.maxlength">
+                Le nom doit avoir moins de 50 caractères
+            </span>
+        </div>
+    </form>
 </div>

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateGenreComponent implements OnInit {
 
-  id;
+  id: number;
   genre: object;
 
   constructor(private update: UpdateService, private route: ActivatedRoute, private router: Router, private oneGenre: OneGenreService) { }
@@ -24,7 +24,7 @@ export class UpdateGenreComponent implements OnInit {
     })
   }
 
-  updateGenre(name) {
+  updateGenre(name: string) {
     let genre = {name: name}
     this.update.update(this.id, genre).subscribe(() => this.redirectToRoute());
   }

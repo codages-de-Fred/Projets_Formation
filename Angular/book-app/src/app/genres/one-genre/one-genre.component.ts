@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OneGenreService } from "../services/one-genre.service";
 import { ActivatedRoute } from "@angular/router";
+import { Genre } from "../genre";
 
 @Component({
   selector: 'app-one-genre',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from "@angular/router";
 export class OneGenreComponent implements OnInit {
 
   id: number;
-  genre: object;
+  genre: Genre;
 
   constructor(private oneGenre: OneGenreService, private route: ActivatedRoute) { }
 

@@ -12,6 +12,7 @@ import { UpdateGenreComponent } from './genres/update-genre/update-genre.compone
 import { AllFormatsComponent } from './formats/all-formats/all-formats.component';
 import { OneFormatComponent } from './formats/one-format/one-format.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
+import { AllAuthorsComponent } from './authors/all-authors/all-authors.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UpdateFormatComponent } from './formats/update-format/update-format.com
     UpdateGenreComponent,
     AllFormatsComponent,
     OneFormatComponent,
-    UpdateFormatComponent
+    UpdateFormatComponent,
+    AllAuthorsComponent
   ],
   imports: [
     BrowserModule,

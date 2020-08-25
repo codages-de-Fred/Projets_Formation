@@ -9,6 +9,8 @@ import { AllFormatsComponent } from "./formats/all-formats/all-formats.component
 import { OneFormatComponent } from "./formats/one-format/one-format.component";
 import { UpdateFormatComponent } from "./formats/update-format/update-format.component";
 
+import { AllAuthorsComponent } from "./authors/all-authors/all-authors.component";
+
 const routes: Routes = [
   { path: 'genre', component: GenreComponent},
   { path: 'oneGenre/:id', component: OneGenreComponent},
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'format', component: AllFormatsComponent},
   { path: 'oneFormat/:id', component: OneFormatComponent},
   { path: 'updateFormat/:format', component: UpdateFormatComponent},
+  { path: 'author', component: AllAuthorsComponent },
 ];
 
 @NgModule({
