@@ -1,1 +1,53 @@
-<p>all-authors works!</p>
+<section>
+    <div>
+        <div class="add" (click)="afficheForm()">
+            <span>Ajouter un auteur</span>
+        </div>
+        <div *ngIf="accesFormulaireAdd">
+            <form [formGroup]="formAdd" (ngSubmit)="createAuthor()">
+                <div>
+                    <span>Prénom : </span>
+                    <input type="text" formControlName="firstname">
+                </div>
+                <div>
+                    <span>Nom : </span>
+                    <input type="text" formControlName="lastname">
+                </div>
+                <div>
+                    <span>Nationalité : </span>
+                    <input type="text" formControlName="nationality">
+                </div>
+                <div>
+                    <span>Date de naissance : </span>
+                    <input type="date" formControlName="dob">
+                </div>
+                <div>
+                    <span>Date de décès : </span>
+                    <input type="date" formControlName="dod">
+                </div>
+                <button type="submit">ajouter</button>
+                <button (click)="changeAccesFormulaireAdd()">Annuler</button>              
+            </form>
+        </div>
+    </div>
+
+    <div *ngFor="let author of authors" >
+        <span class="names" (click)="changeAccesDetail()">{{author.firstName}} {{author.lastName}}</span>
+        <button>modifier</button><button>supprimer</button>
+        <div *ngIf="accesDetail">
+            <div>
+                Nationalité : {{author.nationality}}
+            </div>
+            <div>
+                Date de naissance : {{author.dob | date:'dd/MM/yyyy':'fr-FR'}}
+            </div>
+            <div *ngIf="author.dead">
+                Date de décès : {{author.dod | date:'dd/MM/yyyy':'fr-FR'}}
+            </div>
+            <span *ngIf="author.books">
+                <span *ngFor="let book of author.books">book</span>
+            </span>
+            <button (click)="changeAccesDetail()">réduire</button>
+        </div>
+    </div>
+</section>
