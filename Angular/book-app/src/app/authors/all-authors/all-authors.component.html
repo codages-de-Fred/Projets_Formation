@@ -4,7 +4,7 @@
         <div class="add" (click)="afficheForm()">
             <span>Ajouter un auteur</span>
         </div>
-        <div *ngIf="accesFormulaireAdd">
+        <div *ngIf="accesFormulaireAdd" class="addForm">
             <form [formGroup]="formAdd" (ngSubmit)="createAuthor()">
                 <div>
                     <span>Prénom : </span>

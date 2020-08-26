@@ -1,5 +1,5 @@
 h1 {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 section {
     display: flex;
@@ -8,6 +8,46 @@ section {
 #add {
     margin: 2%;
     width: 20%;
+    height: 100vh;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+.add {
+    text-align: justify;
+}
+.add > span {
+    font-weight: bold;
+    font-size: 1.5em;
+    position: fixed;
+    background-color: rgb(196, 194, 194);
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    transition-duration: 1s;
+}
+.add > span:hover {
+    box-shadow: none;
+    background-color: white;
+    border: none;
+}
+.addForm {
+    position: relative;
+    left: 30vw;
+    text-align: justify;
+    width: 50vw;
+    background-color: rgb(245, 222, 222);
+    border-radius: 10px;
+}
+.addForm > form > div {
+    padding: 20px;
+}
+.addForm > form > div > span {
+    font-weight: bold;
+}
+.addForm > form > button {
+    margin: 10px;
+}
+button:hover {
+    cursor: pointer;
 }
 .add:hover {
     cursor: pointer;
