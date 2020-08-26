@@ -1,12 +1,39 @@
+h1 {
+    margin-bottom: 10%;
+}
 section {
     display: flex;
+    width: 100%;
 }
 #add {
-    margin: 10%;
+    margin: 2%;
+    width: 20%;
 }
 .add:hover {
     cursor: pointer;
 }
+#list {
+    text-align: justify;
+    width: 60%;
+    background-color: rgb(245, 237, 237);
+}
+.authors {
+    display: flex;
+}
+.author {
+    width: 50%;
+    background-color: rgb(228, 220, 220);
+}
+.author:hover {
+    background-color: rgb(245, 237, 237);
+}
+.names {
+    padding-top: 10px;
+    margin-left: 20px;
+}
 .names:hover {
     cursor: pointer;
+}
+.listButton {
+    margin-left: 10px;
 }
