@@ -85,24 +85,23 @@ export class UpdateAuthorComponent implements OnInit {
     this.firstname = Object.values(this.changeForm.value)[0];
     this.lastname = Object.values(this.changeForm.value)[1];
     this.nationality = Object.values(this.changeForm.value)[2];
-    const newAuthor: Author = {
-      id: this.id,
+    const newAuthor = {
       firstName: this.firstname,
       lastName: this.lastname,
       nationality: this.nationality,
       dob: this.dob,
       dod: this.dod,
       dead: this.dead,
-      books: this.updateAuthor.books
     };
     console.log(newAuthor)
+    console.log(this.id)
     if (!newAuthor.dod) {
       newAuthor.dead = false;
       newAuthor.dod = null;
     } else {
       newAuthor.dead = true;
     }
-    return this.service.update(newAuthor).subscribe(() => 
+    return this.service.update(newAuthor, this.id).subscribe(() => 
       this.router.navigate(["/author"])
     );
   }

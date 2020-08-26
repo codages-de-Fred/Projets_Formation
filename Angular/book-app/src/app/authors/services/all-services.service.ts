@@ -28,8 +28,8 @@ export class AllServicesService {
     return this.http.post<Author>(this.url, author);
   }
 
-  update(author: Author): Observable<Author> {
-    return this.http.put<Author>(`${this.url}/${author.id}`, author);
+  update(author: object, id: number): Observable<object> {
+    return this.http.put<object>(`${this.url}/${id}`, author);
   }
 
   delete(id: number): Observable<any> {
