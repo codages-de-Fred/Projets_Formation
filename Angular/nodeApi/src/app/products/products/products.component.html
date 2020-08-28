@@ -4,9 +4,11 @@
             <span (click)="getOneProduct(product)">
                 {{product.name}}
             </span>
+            <a routerLink="/update-product/{{product._id}}"><button>modifier</button></a>
+            <button (click)="delete(product)">supprimer</button>
         </div>
     </div>
-    <div *ngIf="product">
+    <div *ngIf="product && displayDetail">
         <div>
             <span>Nom du produit : </span>
             {{product.name}}
@@ -19,12 +21,13 @@
             <span>Prix du produit : </span>
             {{product.price}}
         </div>
+        <button (click)="reduce()">réduire</button>
     </div>
 </section>
 
 <div>
     <h2 (click)="askAddForm()">ajouter un produit</h2>
-    <div *ngIf="addForm">
+    <div *ngIf="addForm && displayAdd">
         <form [formGroup]="addForm" (ngSubmit)="addProduct()">
             <div>
                 <label >Le nom du produit : </label>
@@ -39,6 +42,7 @@
                 <input type="number" formControlName="price">
             </div>
             <button type="submit">ajouter</button>
+            <button (click)="reduceAdd()">annuler</button>
         </form>
     </div>
 </div>

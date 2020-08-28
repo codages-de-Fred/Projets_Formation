@@ -14,6 +14,9 @@ export class ProductsComponent implements OnInit {
   addForm;
   product: Product;
 
+  displayDetail: boolean = false;
+  displayAdd: boolean = false;
+
   constructor(private service: ServiceService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -30,6 +33,7 @@ export class ProductsComponent implements OnInit {
   }
 
   createForm(): FormGroup {
+    this.reduceAdd();
     return this.fb.group({
       name: [''],
       description: [''],
@@ -40,14 +44,29 @@ export class ProductsComponent implements OnInit {
   addProduct() {
     const newProduct = this.addForm.value;
     this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
+    this.reduceAdd();
     return this.addForm = "";
   }
 
   /** récupère un seul produit *************** */
   getOneProduct(product: Product) {
     if(product._id) {
+      this.displayDetail = true;
       const id = product._id
       return this.service.getOneProduct(id).subscribe(data => this.product = data);
     }
   }
+
+  /**** supprimer un produit sélectionné ********** */
+  delete(product: Product) {
+    return this.service.delete(product._id).subscribe(() => this.getAllProducts());
+  }
+
+  /**** réducteurs de div***************** */
+  reduce(): void {
+    this.displayDetail = false;
+  }
+  reduceAdd(): void {
+    this.displayAdd = !this.displayAdd;
+  }  
 }

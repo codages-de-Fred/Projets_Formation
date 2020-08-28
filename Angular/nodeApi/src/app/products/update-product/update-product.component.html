@@ -1,0 +1,19 @@
+<h1 *ngIf="product">Modifier le produit "{{product.name}}"</h1>
+<div *ngIf="product">
+    <form [formGroup]="updateForm" (ngSubmit)="update()">
+        <div>
+            <label >Le nom du produit : </label>
+            <input type="text" formControlName="name">
+        </div>
+        <div>
+            <label>La description du produit : </label>
+            <input type="text" formControlName="description">
+        </div>
+        <div>
+            <label>Le prix du produit : </label>
+            <input type="number" formControlName="price">
+        </div>
+        <button type="submit">modifier</button>
+        <a routerLink="/product"><button>annuler</button></a>
+    </form>
+</div>
