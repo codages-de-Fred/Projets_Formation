@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 let Categories = require('../models/Categories');
-const { Router } = require('express');
 
 //ts les produits
 router.route('/').get((req, res) => {

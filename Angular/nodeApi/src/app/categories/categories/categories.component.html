@@ -1,0 +1,30 @@
+<section>
+    <div *ngIf="categories">
+        <div *ngFor="let category of categories">
+            <span (click)="getOne(category)">{{category.name}}</span>
+            <a routerLink=""><button>modifier</button></a>
+            <button (click)="delete(category)">supprimer</button>
+        </div>
+        <div *ngIf="displayOne">
+            <div><span>Le nom : {{category.name}}</span></div>
+            <div><span>Le nom : {{category.description}}</span></div>
+        </div>
+    </div>
+</section>
+<div>
+    <h2 (click)="beginForm()">Ajouter une catégorie</h2>
+    <div *ngIf="addForm && displayAdd">
+        <form [formGroup]="addForm" (ngSubmit)="add()">
+            <div>
+                <label >Le nom de la catégorie : </label>
+                <input type="text" formControlName="name">
+            </div>
+            <div>
+                <label>La description de la catégorie : </label>
+                <input type="text" formControlName="description">
+            </div>
+            <button type="submit">ajouter</button>
+        </form>
+        <button (click)="changeAdd()">annuler</button>
+    </div>
+</div>

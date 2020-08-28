@@ -8,12 +8,16 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { ProductsComponent } from './products/products/products.component';
 import { UpdateProductComponent } from './products/update-product/update-product.component';
+import { CategoriesComponent } from './categories/categories/categories.component';
+import { UpdateComponent } from './categories/update/update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    CategoriesComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
