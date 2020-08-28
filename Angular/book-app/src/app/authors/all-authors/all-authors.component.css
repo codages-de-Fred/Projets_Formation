@@ -16,6 +16,7 @@ section {
     text-align: justify;
 }
 .add > span {
+    width: 18%;
     font-weight: bold;
     font-size: 1.5em;
     position: fixed;
@@ -26,7 +27,7 @@ section {
 }
 .add > span:hover {
     box-shadow: none;
-    background-color: white;
+    background-color: rgb(241, 231, 231);
     border: none;
 }
 .addForm {

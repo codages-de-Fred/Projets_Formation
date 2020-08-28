@@ -79,5 +79,22 @@ router.route("/:id").delete((req, res) => {
     });
 });
 
+//on créé une route pour modifier un product
+router.route("/:id").put((req, res) => {
+    const id = req.params.id;
+    Product.findByIdAndUpdate(id, req.body, {new: true}, (err, product) => {
+    //{new: true} est une option mongoose pour findByIdAndUpdate pour renvoyer le product modifié
+        if(err) {
+            res.status(500).json({message: `Error updating product ${is} : ${err}`});
+        } else {
+            if(product) {
+                res.json(product);
+            } else {
+                res.status(404).json({message: `Product ${id} not found`});
+            }
+        }
+    });
+});
+
 //on exporte ensuite nos routes
 module.exports = router;

@@ -1,0 +1,44 @@
+<section>
+    <div *ngIf="products">
+        <div *ngFor="let product of products">
+            <span (click)="getOneProduct(product)">
+                {{product.name}}
+            </span>
+        </div>
+    </div>
+    <div *ngIf="product">
+        <div>
+            <span>Nom du produit : </span>
+            {{product.name}}
+        </div>
+        <div>
+            <span>Description du produit : </span>
+            {{product.description}}
+        </div>
+        <div>
+            <span>Prix du produit : </span>
+            {{product.price}}
+        </div>
+    </div>
+</section>
+
+<div>
+    <h2 (click)="askAddForm()">ajouter un produit</h2>
+    <div *ngIf="addForm">
+        <form [formGroup]="addForm" (ngSubmit)="addProduct()">
+            <div>
+                <label >Le nom du produit : </label>
+                <input type="text" formControlName="name">
+            </div>
+            <div>
+                <label>La description du produit : </label>
+                <input type="text" formControlName="description">
+            </div>
+            <div>
+                <label>Le prix du produit : </label>
+                <input type="number" formControlName="price">
+            </div>
+            <button type="submit">ajouter</button>
+        </form>
+    </div>
+</div>

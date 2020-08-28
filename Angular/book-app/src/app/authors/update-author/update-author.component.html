@@ -1,4 +1,5 @@
-<div *ngIf="changeForm && dateForm">
+<h1 *ngIf="updateAuthor">Modifier l'auteur {{updateAuthor.firstName}} {{updateAuthor.lastName}}</h1>
+<div *ngIf="changeForm">
     <form [formGroup]="changeForm" (ngSubmit)="update()">
         <div>
             <span>Prénom : </span>
@@ -272,17 +273,15 @@
                 <option value="ZW">Zimbabwe</option>	
             </select>
         </div>
-        <form [formGroup]="dateForm" *ngIf="!editDateForm">
+        <div *ngIf="!editDateForm">
             <div>
-                <span>Date de naissance : </span>
-                <input type="text" formControlName="dob">
+                <span>Date de naissance : {{updateAuthor.dob | date: "dd/MM/yyyy":'fr-FR'}}</span>
             </div>
             <div>
-                <span>Date de décès : </span>
-                <input type="text" formControlName="dod">
+                <span>Date de décès : {{updateAuthor.dod | date: "dd/MM/yyyy":'fr-FR'}}</span>
             </div>
             <button (click)="changeDateForm()">modifier les dates</button>
-        </form>
+        </div>
         <form [formGroup]="editDateForm" *ngIf="editDateForm">
             <div>
                 <span>Date de naissance : </span>

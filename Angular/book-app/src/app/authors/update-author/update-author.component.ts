@@ -33,7 +33,6 @@ export class UpdateAuthorComponent implements OnInit {
     this.service.getOneAuthor(this.id).subscribe(
       data => {this.updateAuthor=data;
       this.changeForm = this.createChangeForm(this.updateAuthor);
-      this.dateForm = this.createDateForm(this.updateAuthor);
       });
   }
 
@@ -47,18 +46,6 @@ export class UpdateAuthorComponent implements OnInit {
     }) 
   }
   
-  createDateForm(author: Author): FormGroup {
-    //gestion de la date de décès si existante
-    if(author.dod !== null) {
-      this.dateDod = new Date(author.dod).toLocaleDateString();
-    } else {
-      this.dateDod = "";
-    }
-    return this.fb.group({
-      dob: [new Date(author.dob).toLocaleDateString()],
-      dod: [this.dateDod],
-    })
-  }
 
   changeDateForm() {
     this.editDateForm = this.newDateForm();
@@ -93,8 +80,7 @@ export class UpdateAuthorComponent implements OnInit {
       dod: this.dod,
       dead: this.dead,
     };
-    console.log(newAuthor)
-    console.log(this.id)
+    
     if (!newAuthor.dod) {
       newAuthor.dead = false;
       newAuthor.dod = null;
