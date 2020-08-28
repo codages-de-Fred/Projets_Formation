@@ -1,1 +1,14 @@
-<p>update works!</p>
+<div *ngIf="category">
+    <form [formGroup]="updateForm" (ngSubmit)="update()">
+        <div>
+            <label>Le nom de la catégorie : </label>
+            <input type="text" formControlName="name">
+        </div>
+        <div>
+            <label>La description de la catégorie : </label>
+            <input type="text" formControlName="description">
+        </div>
+        <button type="submit">modifier</button>
+        <a routerLink="/categories"><button>annuler</button></a>
+    </form>
+</div>

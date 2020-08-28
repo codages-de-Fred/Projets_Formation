@@ -2,7 +2,7 @@
     <div *ngIf="categories">
         <div *ngFor="let category of categories">
             <span (click)="getOne(category)">{{category.name}}</span>
-            <a routerLink=""><button>modifier</button></a>
+            <a routerLink="/update-categories/{{category._id}}"><button>modifier</button></a>
             <button (click)="delete(category)">supprimer</button>
         </div>
         <div *ngIf="displayOne">
