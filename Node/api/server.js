@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helloRoute = require('./routes/helloWorld.route');
 const productRoute = require('./routes/product.route');
+const categoriesRoute = require('./routes/categories.route');
 
 /**
  * on apporte notre ODM mongoose
@@ -46,6 +47,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/", helloRoute);
 app.use('/product', productRoute);
+app.use('/categories', categoriesRoute);
 
 /**
  * on demande ensuite au serveur d'écouter sur le port défini"

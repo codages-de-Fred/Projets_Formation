@@ -4,7 +4,6 @@ const router = express.Router();
 
 //on récupère le model product
 let Product = require('../models/Product');
-const product = require('../models/Product');
 
 //on définit ensuite nos routes
 //pour renvoyer ts nos products en cas de réception d'une requête GET sur notre serveur
@@ -85,7 +84,7 @@ router.route("/:id").put((req, res) => {
     Product.findByIdAndUpdate(id, req.body, {new: true}, (err, product) => {
     //{new: true} est une option mongoose pour findByIdAndUpdate pour renvoyer le product modifié
         if(err) {
-            res.status(500).json({message: `Error updating product ${is} : ${err}`});
+            res.status(500).json({message: `Error updating product ${id} : ${err}`});
         } else {
             if(product) {
                 res.json(product);
