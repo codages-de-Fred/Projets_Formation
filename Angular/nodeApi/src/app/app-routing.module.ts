@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProductsComponent } from "./products/products/products.component";
-import { UpdateProductComponent } from "./products/update-product/update-product.component";
+import { UpdateProductsComponent } from "./products/update-products/update-products.component";
 
 import { CategoriesComponent } from "./categories/categories/categories.component";
-import { UpdateComponent } from "./categories/update/update.component";
+import { UpdateCategoriesComponent } from "./categories/update-categories/update-categories.component";
 
 const routes: Routes = [
   {path: "product", component: ProductsComponent},
-  {path: "update-product/:id", component: UpdateProductComponent},
+  {path: "update-product/:id", component: UpdateProductsComponent},
   {path: "categories", component: CategoriesComponent},
-  {path: "update-categories/:id", component: UpdateComponent}
+  {path: "update-categories/:id", component: UpdateCategoriesComponent}
 ];
 
 @NgModule({

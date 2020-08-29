@@ -7,17 +7,17 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { ProductsComponent } from './products/products/products.component';
-import { UpdateProductComponent } from './products/update-product/update-product.component';
+import { UpdateProductsComponent } from './products/update-products/update-products.component';
 import { CategoriesComponent } from './categories/categories/categories.component';
-import { UpdateComponent } from './categories/update/update.component';
+import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    UpdateProductComponent,
+    UpdateProductsComponent,
     CategoriesComponent,
-    UpdateComponent
+    UpdateCategoriesComponent
   ],
   imports: [
     BrowserModule,

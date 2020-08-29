@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Product } from "../product";
+import { Product } from "../products";
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class ProductsServicesService {
 
   private url : string = "http://localhost:4000/product"
 

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ServiceService } from "../services/service.service";
+import { CategoriesServicesService } from "../services/categories-services.service";
 import { Categories } from '../categories';
 
 @Component({
-  selector: 'app-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  selector: 'app-update-categories',
+  templateUrl: './update-categories.component.html',
+  styleUrls: ['./update-categories.component.css']
 })
-export class UpdateComponent implements OnInit {
+export class UpdateCategoriesComponent implements OnInit {
 
-  constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: CategoriesServicesService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
   category: Categories;
   id: string;

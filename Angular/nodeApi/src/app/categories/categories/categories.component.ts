@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Categories } from "../categories";
-import { ServiceService } from "../services/service.service";
+import { CategoriesServicesService } from "../services/categories-services.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
   displayAdd: boolean = false;
   displayOne: boolean = false;
 
-  constructor(private service: ServiceService, private fb: FormBuilder) { }
+  constructor(private service: CategoriesServicesService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getAll(); 

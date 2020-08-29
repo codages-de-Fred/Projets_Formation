@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../services/service.service';
+import { ProductsServicesService } from '../services/products-services.service';
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { Product } from "../product";
+import { Product } from "../products";
 
 @Component({
-  selector: 'app-update-product',
-  templateUrl: './update-product.component.html',
-  styleUrls: ['./update-product.component.css']
+  selector: 'app-update-products',
+  templateUrl: './update-products.component.html',
+  styleUrls: ['./update-products.component.css']
 })
-export class UpdateProductComponent implements OnInit {
+export class UpdateProductsComponent implements OnInit {
 
   product: Product;
   updateForm: FormGroup;
 
-  constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: ProductsServicesService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -46,3 +46,5 @@ export class UpdateProductComponent implements OnInit {
     });
   }
 }
+
+

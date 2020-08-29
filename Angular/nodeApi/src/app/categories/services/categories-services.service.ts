@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class CategoriesServicesService {
 
   private url: string = "http://localhost:4000/categories";
 

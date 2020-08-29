@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from "../services/service.service";
+import { ProductsServicesService } from "../services/products-services.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { Product } from '../product';
+import { Product } from '../products';
+
 
 @Component({
   selector: 'app-products',
@@ -17,7 +18,7 @@ export class ProductsComponent implements OnInit {
   displayDetail: boolean = false;
   displayAdd: boolean = false;
 
-  constructor(private service: ServiceService, private fb: FormBuilder) { }
+  constructor(private service: ProductsServicesService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -69,4 +70,5 @@ export class ProductsComponent implements OnInit {
   reduceAdd(): void {
     this.displayAdd = !this.displayAdd;
   }  
+
 }
