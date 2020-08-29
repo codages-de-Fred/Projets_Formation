@@ -13,6 +13,12 @@
             <label>Le prix du produit : </label>
             <input type="number" formControlName="price">
         </div>
+        <div>
+            <label>Catégories : </label>
+            <select formControlName="categories">
+                <option *ngFor="let category of categories" value="{{category._id}}">{{category.name}}</option>
+            </select>
+        </div>
         <button type="submit">modifier</button>
         <a routerLink="/product"><button>annuler</button></a>
     </form>

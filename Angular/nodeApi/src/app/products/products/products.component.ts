@@ -53,7 +53,8 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct() {
-    const newProduct = this.addForm.value;
+    const newProduct: Product = this.addForm.value;
+    console.log(newProduct)
     this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
     this.reduceAdd();
     return this.addForm = "";

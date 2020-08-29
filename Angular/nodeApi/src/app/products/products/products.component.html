@@ -49,10 +49,11 @@
             </div>
             <div *ngIf="categories" >
                 <span>La (ou les) catégories du produit : </span>
-                <div *ngFor="let categorie of categories">
-                    <input type="checkbox" value="categorie._id" formControlName="categories">
-                    <label>{{categorie.name}}</label>
-                </div>
+                <select formControlName="categories">
+                    <option *ngFor="let categorie of categories" value="{{categorie._id}}">
+                        {{categorie.name}}
+                    </option>
+                </select>
             </div>
             <button type="submit">ajouter</button>
             <button (click)="reduceAdd()">annuler</button>
