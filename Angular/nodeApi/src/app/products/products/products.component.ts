@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsServicesService } from "../services/products-services.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Product } from '../products';
+import { Categories } from "../../categories/categories";
+import { CategoriesServicesService } from "../../categories/services/categories-services.service";
 
 
 @Component({
@@ -15,10 +17,14 @@ export class ProductsComponent implements OnInit {
   addForm;
   product: Product;
 
+  categories: Categories[];
+  category: Categories;
+  listCategoriesProduct = [];
+
   displayDetail: boolean = false;
   displayAdd: boolean = false;
 
-  constructor(private service: ProductsServicesService, private fb: FormBuilder) { }
+  constructor(private service: ProductsServicesService, private fb: FormBuilder, private categoriesServive: CategoriesServicesService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -30,7 +36,10 @@ export class ProductsComponent implements OnInit {
 
   /**** ajouter un product ************************ */
   askAddForm() {
-    this.addForm = this.createForm();
+    this.categoriesServive.getAll().subscribe((data) => {
+      this.categories = data;
+      this.addForm = this.createForm();
+    })
   }
 
   createForm(): FormGroup {
@@ -38,7 +47,8 @@ export class ProductsComponent implements OnInit {
     return this.fb.group({
       name: [''],
       description: [''],
-      price: Number
+      price: Number,
+      categories: ['']
     })
   }
 
@@ -53,8 +63,22 @@ export class ProductsComponent implements OnInit {
   getOneProduct(product: Product) {
     if(product._id) {
       this.displayDetail = true;
+      this.listCategoriesProduct = [];
       const id = product._id
-      return this.service.getOneProduct(id).subscribe(data => this.product = data);
+      return this.service.getOneProduct(id).subscribe(data => {
+        this.product = data;
+        this.getCategoriesProduct(this.product);
+        });
+    }
+  }
+
+  getCategoriesProduct(product: Product) {
+    if (product.categories) {
+      product.categories.forEach(element => {
+        this.categoriesServive.getOne(element).subscribe((data) => {
+          this.listCategoriesProduct.push(data);
+        })
+      });
     }
   }
 
@@ -65,6 +89,7 @@ export class ProductsComponent implements OnInit {
 
   /**** réducteurs de div***************** */
   reduce(): void {
+    this.listCategoriesProduct = [];
     this.displayDetail = false;
   }
   reduceAdd(): void {

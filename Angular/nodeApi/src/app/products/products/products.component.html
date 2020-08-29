@@ -21,6 +21,12 @@
             <span>Prix du produit : </span>
             {{product.price}}
         </div>
+        <div *ngIf="listCategoriesProduct">
+            <span>Catégories :</span>
+            <div *ngFor="let categorie of listCategoriesProduct">
+                <span>{{categorie.name}}</span>
+            </div>
+        </div>
         <button (click)="reduce()">réduire</button>
     </div>
 </section>
@@ -40,6 +46,13 @@
             <div>
                 <label>Le prix du produit : </label>
                 <input type="number" formControlName="price">
+            </div>
+            <div *ngIf="categories" >
+                <span>La (ou les) catégories du produit : </span>
+                <div *ngFor="let categorie of categories">
+                    <input type="checkbox" value="categorie._id" formControlName="categories">
+                    <label>{{categorie.name}}</label>
+                </div>
             </div>
             <button type="submit">ajouter</button>
             <button (click)="reduceAdd()">annuler</button>
