@@ -1,0 +1,13 @@
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.exe
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.deps.json
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.runtimeconfig.json
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.runtimeconfig.dev.json
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.dll
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\bin\Debug\netcoreapp3.1\plus_ou_moins.pdb
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.csprojAssemblyReference.cache
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.AssemblyInfoInputs.cache
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.AssemblyInfo.cs
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.csproj.CoreCompileInputs.cache
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.dll
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.pdb
+C:\Users\fredn\Desktop\Projets_codage\C#\plus_ou_moins\plus_ou_moins\obj\Debug\netcoreapp3.1\plus_ou_moins.genruntimeconfig.cache

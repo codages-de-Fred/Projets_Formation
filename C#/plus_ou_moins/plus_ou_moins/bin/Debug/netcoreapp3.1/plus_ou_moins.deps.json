@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "plus_ou_moins/1.0.0": {
+        "runtime": {
+          "plus_ou_moins.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "plus_ou_moins/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
