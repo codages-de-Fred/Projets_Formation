@@ -1,0 +1,13 @@
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.exe
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.deps.json
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.runtimeconfig.json
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.runtimeconfig.dev.json
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.dll
+C:\Users\fredn\Desktop\essai\essai\bin\Debug\netcoreapp3.1\essai.pdb
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.csprojAssemblyReference.cache
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.AssemblyInfoInputs.cache
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.AssemblyInfo.cs
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.csproj.CoreCompileInputs.cache
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.dll
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.pdb
+C:\Users\fredn\Desktop\essai\essai\obj\Debug\netcoreapp3.1\essai.genruntimeconfig.cache
