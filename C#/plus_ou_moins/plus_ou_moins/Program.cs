@@ -62,6 +62,9 @@ namespace plus_ou_moins
             else if (question.Key == ConsoleKey.N)
             {
                 Console.WriteLine("A bientôt");
+            } else if (question.Key != ConsoleKey.O && question.Key != ConsoleKey.N)
+            {
+                playAgain();
             }
         }
     }
