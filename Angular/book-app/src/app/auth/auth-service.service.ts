@@ -26,5 +26,10 @@ export class AuthServiceService {
     };
     return this.http.post(this.url, body, {headers: this.headers});
   }
+
+  public logout(): void {
+    //on vide le localstorage
+    localStorage.removeItem('jwt');
+  }
     
 }

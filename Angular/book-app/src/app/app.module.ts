@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { GenreComponent } from './genres/genre/genre.component';
@@ -15,6 +15,8 @@ import { UpdateFormatComponent } from './formats/update-format/update-format.com
 import { AllAuthorsComponent } from './authors/all-authors/all-authors.component';
 import { UpdateAuthorComponent } from './authors/update-author/update-author.component';
 import { AuthComponent } from './auth/auth.component';
+
+import { AuthInterceptor } from "./auth/authInterceptor";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AuthComponent } from './auth/auth.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
