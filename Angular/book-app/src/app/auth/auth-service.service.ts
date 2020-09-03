@@ -31,5 +31,20 @@ export class AuthServiceService {
     //on vide le localstorage
     localStorage.removeItem('jwt');
   }
+
+  //abstraction de la récupération de notre JWT ds le localStorage
+  public getJWT(): any {
+    const jwt =  JSON.parse(localStorage.getItem('jwt'));
+    if(jwt) {
+      //cela ns permet de tester si le JWT est ewpiré av de le renvoyer
+      if (Date.now()/1000 > jwt.playload.exp) {
+        //s'il est expiré on le retire du localStorage et on renvoie null
+        localStorage.removeItem('jwt');
+        return null;
+      } else {
+        return jwt;
+      }
+    }
+  }
     
 }
