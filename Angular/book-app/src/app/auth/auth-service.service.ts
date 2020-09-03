@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthServiceService {
 
-  private url = "localhost:8000/logni_check";
+  private url = "https://localhost:8000/login_check";
   private headers: HttpHeaders;
 
   constructor(private http: HttpClient) { 
