@@ -1,9 +1,18 @@
+/**
+ * une route lie une url à une action
+ * donc une api est un ensemble de routes
+ * Express est un ensemble d'outils qui permet de gérer une application web, c'est un framework
+ * models équivaut au Repository de symfony il contient tous les findBy, ...)
+ */
+
+
 //on récupère express
 const express = require('express');
 const router = express.Router();
 
 //on récupère le model product
 let Product = require('../models/Product');
+let Categories = require('../models/Categories');
 
 //on définit ensuite nos routes
 //pour renvoyer ts nos products en cas de réception d'une requête GET sur notre serveur
@@ -32,11 +41,20 @@ router.route('/').post((req, res) => {
     //on récupère le corps de la requêtecontenant la représentation json du product à ajouter
     //new product permet de créer un nvel objet selon le model Product
     const product = new Product(req.body);
-    //on enregistre ensuite le product nvllmt dréé ds la bdd
+    //on enregistre ensuite le product nvllmt créé ds la bdd
     //save() renvoie un objet Promise, et save(). then() permet de gérer le cas où save() a réussi
     product.save().then(
         //on définit quoi faire en cas de réussite
-        product => res.json(product)
+        (product) => {
+            //on va chercher la catégorie du product et y ranger notre product
+            Categories.findOne({ name: req.body.categories}, (err, categories) => {
+                if(categories) {
+                    categories.products.push(product);
+                    categories.save();
+                    res.json(product);
+                }
+            })
+        }
     )
     //si une erreur arrive on le gère ds le .catch() de la promise
     .catch(

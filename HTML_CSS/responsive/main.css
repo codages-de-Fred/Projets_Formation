@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.banner {
+    height: 100vh;
+}
+header {
+    display: flex;
+    max-width: 100vw;
+}
+
+header > img {
+
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+img {
+    max-width: 100vw;
+}
+
+.banner {
+    background-image: url("http://via.placeholder.com/400");
+    background-size: cover;
+}

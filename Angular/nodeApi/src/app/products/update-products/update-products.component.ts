@@ -49,7 +49,8 @@ export class UpdateProductsComponent implements OnInit {
   }
 
   update() {
-    const updateProduct = this.updateForm.value;
+    let updateProduct: Product = this.updateForm.value;
+    updateProduct.categories.push()
     return this.service.update(updateProduct, this.product._id).subscribe(() => {
       return this.router.navigate(["/product"]);
     });

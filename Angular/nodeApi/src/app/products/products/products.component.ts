@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsServicesService } from "../services/products-services.service";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
 import { Product } from '../products';
 import { Categories } from "../../categories/categories";
 import { CategoriesServicesService } from "../../categories/services/categories-services.service";
@@ -14,8 +14,9 @@ import { CategoriesServicesService } from "../../categories/services/categories-
 export class ProductsComponent implements OnInit {
 
   products: object[];
-  addForm;
+  addForm: FormGroup;
   product: Product;
+  arrayCategories : Array<any> = [];
 
   categories: Categories[];
   category: Categories;
@@ -36,6 +37,7 @@ export class ProductsComponent implements OnInit {
 
   /**** ajouter un product ************************ */
   askAddForm() {
+    //on récupère la liste de catégories
     this.categoriesServive.getAll().subscribe((data) => {
       this.categories = data;
       this.addForm = this.createForm();
@@ -43,6 +45,9 @@ export class ProductsComponent implements OnInit {
   }
 
   createForm(): FormGroup {
+    this.categoriesServive.getAll().subscribe((data) => {
+      this.categories = data;
+    })
     this.reduceAdd();
     return this.fb.group({
       name: [''],
@@ -54,32 +59,22 @@ export class ProductsComponent implements OnInit {
 
   addProduct() {
     const newProduct: Product = this.addForm.value;
+    console.log(this.addForm)
+    console.log(this.addForm.value.categories.value.checked);
     console.log(newProduct)
-    this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
+    /*this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
     this.reduceAdd();
-    return this.addForm = "";
+    return this.addForm = "";*/
   }
 
   /** récupère un seul produit *************** */
   getOneProduct(product: Product) {
     if(product._id) {
       this.displayDetail = true;
-      this.listCategoriesProduct = [];
       const id = product._id
       return this.service.getOneProduct(id).subscribe(data => {
         this.product = data;
-        this.getCategoriesProduct(this.product);
         });
-    }
-  }
-
-  getCategoriesProduct(product: Product) {
-    if (product.categories) {
-      product.categories.forEach(element => {
-        this.categoriesServive.getOne(element).subscribe((data) => {
-          this.listCategoriesProduct.push(data);
-        })
-      });
     }
   }
 

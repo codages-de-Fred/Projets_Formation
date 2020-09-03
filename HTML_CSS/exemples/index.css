@@ -1,0 +1,15 @@
+.container {
+    color: red;
+    font-size: 1.5em;
+}
+@media screen and (min-width: 720px) and (min-height: 540px) {
+    .container {
+        font-size: 3em;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .container {
+        color: blue;
+    }
+}

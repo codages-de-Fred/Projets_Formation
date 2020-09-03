@@ -8,7 +8,11 @@ const categories = new schema (
         },
         description: {
             type: String 
-        }
+        },
+        products : [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'product'
+        }]
     }, {
         collection: 'categories'
     }

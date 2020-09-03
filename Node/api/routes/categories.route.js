@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 let Categories = require('../models/Categories');
+const { populate } = require('../models/Categories');
 
 //ts les produits
 router.route('/').get((req, res) => {
