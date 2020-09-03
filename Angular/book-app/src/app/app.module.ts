@@ -14,6 +14,7 @@ import { OneFormatComponent } from './formats/one-format/one-format.component';
 import { UpdateFormatComponent } from './formats/update-format/update-format.component';
 import { AllAuthorsComponent } from './authors/all-authors/all-authors.component';
 import { UpdateAuthorComponent } from './authors/update-author/update-author.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdateAuthorComponent } from './authors/update-author/update-author.com
     OneFormatComponent,
     UpdateFormatComponent,
     AllAuthorsComponent,
-    UpdateAuthorComponent
+    UpdateAuthorComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
