@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsServicesService } from "../services/products-services.service";
-import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from "@angular/forms";
 import { Product } from '../products';
 import { Categories } from "../../categories/categories";
 import { CategoriesServicesService } from "../../categories/services/categories-services.service";
@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   addForm: FormGroup;
   product: Product;
   arrayCategories : Array<any> = [];
+  form: FormGroup;
 
   categories: Categories[];
   category: Categories;
@@ -36,35 +37,64 @@ export class ProductsComponent implements OnInit {
   }
 
   /**** ajouter un product ************************ */
+  //lors du click sur le <h2>ajouter un produit
   askAddForm() {
     //on récupère la liste de catégories
     this.categoriesServive.getAll().subscribe((data) => {
       this.categories = data;
+      //on créé un tableau pour les checkbox
+      this.createTableauPourCheckbox();
+      //on créé le formulaire
       this.addForm = this.createForm();
     })
   }
 
+  //le tableau pour faire le ngFor des checkboxes
+  createTableauPourCheckbox() {
+    if(this.categories) {
+      this.categories.forEach(element => {
+        this.arrayCategories.push({
+          name: element.name
+        })
+      });
+    }
+  }
+  
+  //création du formulaire
   createForm(): FormGroup {
-    this.categoriesServive.getAll().subscribe((data) => {
-      this.categories = data;
-    })
     this.reduceAdd();
     return this.fb.group({
       name: [''],
       description: [''],
       price: Number,
-      categories: ['']
+      categories: this.fb.array([]) //on envoie un tableau pour les checkbox
     })
   }
 
+  //les modifications de statut des checkbox
+  saveModificationsCheckbox(e) {
+    const categories: FormArray = this.addForm.get('categories') as FormArray;
+    if (e.target.checked) {
+      categories.push(new FormControl(e.target.value));
+    } else {
+      let i: number = 0;
+      categories.controls.forEach((item: FormControl) => {
+        if (item.value == e.target.value) {
+          categories.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
+  
+
+  //le submit du formulaire
   addProduct() {
     const newProduct: Product = this.addForm.value;
-    console.log(this.addForm)
-    console.log(this.addForm.value.categories.value.checked);
-    console.log(newProduct)
-    /*this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
+    console.log(newProduct.categories)
+    this.service.addProduct(newProduct).subscribe(() => this.getAllProducts());
     this.reduceAdd();
-    return this.addForm = "";*/
   }
 
   /** récupère un seul produit *************** */
