@@ -54,7 +54,7 @@ export class ProductsComponent implements OnInit {
     if(this.categories) {
       this.categories.forEach(element => {
         this.arrayCategories.push({
-          name: element.name
+          name: element.name,
         })
       });
     }

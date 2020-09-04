@@ -13,11 +13,19 @@
             <label>Le prix du produit : </label>
             <input type="number" formControlName="price">
         </div>
+        
         <div>
-            <label>Catégories : </label>
-            <select formControlName="categories">
-                <option *ngFor="let category of categories" value="{{category._id}}">{{category.name}}</option>
-            </select>
+            <span>Ses catégories : </span>
+            <div *ngFor="let category of categories">
+                <label *ngIf="checked(category.name)">
+                    <input type="checkbox" value="{{category.name}}"  checked>
+                {{category.name}}
+                </label>
+                <label *ngIf="noChecked">
+                    <input type="checkbox" value="{{category.name}}" (change)="saveModificationsCheckbox($event)">
+                {{category.name}}
+                </label>
+            </div>
         </div>
         <button type="submit">modifier</button>
         <a routerLink="/product"><button>annuler</button></a>
